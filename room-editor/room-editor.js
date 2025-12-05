@@ -10,6 +10,17 @@ function runIfPresent(object, key, code) {
 	}
 }
 
+//Simplifies adding button controls.
+function addInspectorParam(parent, code) {
+	let paramDiv = document.createElement("div");
+
+	paramDiv.className = "inspectorParam";
+
+	paramDiv.innerHTML = code();
+
+	parent.appendChild(paramDiv);
+}
+
 //Adds the directory request dialog on page load if we need it.
 function createDirectoryRequester() {
 	let dirRequesterOuter = document.createElement("div");
@@ -96,10 +107,156 @@ async function populateInspector() {
 		runIfPresent(roomObj, "authorLink", () => {
 			document.getElementById("authorLink").value = roomObj.authorLink;
 		});
+
+		if(Object.hasOwn(roomObj, "buttons")) {
+			for(const button of roomObj.buttons) {
+				addButtonControls(button);
+			}
+		}
 	}
 	catch(error) {
 		console.log(`populateInspector Error: ${error}`);
 	}
+}
+
+function addButtonControls(data) {
+	let container = document.createElement("details");
+	let summary = document.createElement("summary");
+	let inspectorButtons = document.getElementById("inspectorButtons");
+
+	container.id = `button${buttonId}`;
+
+	if(data == null)
+		container.open = true;
+
+	summary.id = `{button${buttonId}-summary}`;
+	summary.innerHTML = `${buttonId}`;
+
+	container.appendChild(summary);
+
+	//Add controls.
+	//Button ID
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-buttonId">ID</label>
+				<input type="text" name="button${buttonId}-buttonId" id="button${buttonId}-buttonId"></input>`;
+	});
+
+	//Image
+	addInspectorParam(container, () => {
+		return `<span>Image</span>
+				<label class="fileSelect" for="button${buttonId}-image" id="button${buttonId}-imageLabel">Select Image</label>
+				<input type="file" name="button${buttonId}-image" id="button${buttonId}-image" accept="image/*"></input>`;
+	});
+
+	//Image Hover
+	addInspectorParam(container, () => {
+		return `<span>Image Hover</span>
+				<label class="fileSelect" for="button${buttonId}-imageHover" id="button${buttonId}-imageHoverLabel">Select Image</label>
+				<input type="file" name="button${buttonId}-imageHover" id="button${buttonId}-imageHover" accept="image/*"></input>`;
+	});
+
+	//Image Down
+	addInspectorParam(container, () => {
+		return `<span>Image Down</span>
+				<label class="fileSelect" for="button${buttonId}-imageDown" id="button${buttonId}-imageDownLabel">Select Image</label>
+				<input type="file" name="button${buttonId}-imageDown" id="button${buttonId}-imageDown" accept="image/*"></input>`;
+	});
+
+	//Alt Text
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-imageAltText">Alt Text</label>
+				<input type="text" name="button${buttonId}-imageAltText" id="button${buttonId}-imageAltText"></input>`;
+	});
+
+	//Pixel Art
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-pixelArt">Pixel Art</label>
+				<input type="checkbox" name="button${buttonId}-pixelArt" id="button${buttonId}-pixelArt"></input>`;
+	});
+
+	//Destination
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-destination">Destination</label>
+				<input type="text" name="button${buttonId}-destination" id="button${buttonId}-destination"></input>`;
+	});
+
+	//Tooltip
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-tooltip">Tooltip</label>
+				<input type="text" name="button${buttonId}-tooltip" id="button${buttonId}-tooltip"></input>`;
+	});
+
+	//Left
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-left">Left</label>
+				<input type="text" name="button${buttonId}-left" id="button${buttonId}-left"></input>`;
+	});
+
+	//Top
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-top">Top</label>
+				<input type="text" name="button${buttonId}-top" id="button${buttonId}-top"></input>`;
+	});
+
+	//Width
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-width">Width</label>
+				<input type="text" name="button${buttonId}-width" id="button${buttonId}-width"></input>`;
+	});
+
+	//Height
+	addInspectorParam(container, () => {
+		return `<label for="button${buttonId}-height">Height</label>
+				<input type="text" name="button${buttonId}-height" id="button${buttonId}-height"></input>`;
+	});
+
+	//If data is not empty, fill out the various parameters.
+	if(data != null) {
+		runIfPresent(data, "id", () => {
+			summary.innerHTML = data.id;
+			container.querySelector(`#button${buttonId}-buttonId`).value = data.id;
+		});
+
+		runIfPresent(data, "image", () => {
+			container.querySelector(`#button${buttonId}-imageLabel`).innerHTML = data.image;
+		});
+		runIfPresent(data, "imageHover", () => {
+			container.querySelector(`#button${buttonId}-imageHoverLabel`).innerHTML = data.imageHover;
+		});
+		runIfPresent(data, "imageDown", () => {
+			container.querySelector(`#button${buttonId}-imageDownLabel`).innerHTML = data.imageDown;
+		});
+		runIfPresent(data, "imageAltText", () => {
+			container.querySelector(`#button${buttonId}-imageAltText`).value = data.imageAltText;
+		});
+		runIfPresent(data, "pixelArt", () => {
+			container.querySelector(`#button${buttonId}-pixelArt`).checked = data.pixelArt;
+		});
+
+		runIfPresent(data, "destination", () => {
+			container.querySelector(`#button${buttonId}-destination`).value = data.destination;
+		});
+		runIfPresent(data, "tooltip", () => {
+			container.querySelector(`#button${buttonId}-tooltip`).value = data.tooltip;
+		});
+
+		runIfPresent(data, "left", () => {
+			container.querySelector(`#button${buttonId}-left`).value = data.left;
+		});
+		runIfPresent(data, "top", () => {
+			container.querySelector(`#button${buttonId}-top`).value = data.top;
+		});
+		runIfPresent(data, "width", () => {
+			container.querySelector(`#button${buttonId}-width`).value = data.width;
+		});
+		runIfPresent(data, "height", () => {
+			container.querySelector(`#button${buttonId}-height`).value = data.height;
+		});
+	}
+
+	inspectorButtons.appendChild(container);
+
+	++buttonId;
 }
 
 function setBackground(fileName) {
@@ -166,6 +323,7 @@ window.addEventListener("load", () => {
 	let pixelArt = document.getElementById("pixelArt");
 	let backgroundColour = document.getElementById("pageColour");
 	let script = document.getElementById("script");
+	let addButtonButton = document.getElementById("addButton");
 	let saveRoomButton = document.getElementById("saveRoom");
 	let viewRoomButton = document.getElementById("viewRoom");
 
@@ -183,6 +341,10 @@ window.addEventListener("load", () => {
 
 	script.addEventListener("change", (event) => {
 		document.getElementById("scriptLabel").innerHTML = event.target.files[0].name;
+	});
+
+	addButtonButton.addEventListener("click", (event) => {
+		addButtonControls(null);
 	});
 
 	saveRoomButton.addEventListener("click", (event) => {

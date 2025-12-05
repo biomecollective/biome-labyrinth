@@ -1,0 +1,34 @@
+{
+	"name": "<name for the room>", //optional
+
+	"image": "<image filename>",
+	"imageAltText": "<alt text describing the background image>",
+	"pixelArt": "<true/false>", //true means we get nice crisp pixels
+
+	"backgroundColour": "<hex code to set the background colour of the page>", //optional
+
+	"script": "<script filename>", //optional
+
+	"author": "<author name/handle>",
+	"authorLink": "<link to author's website>", //optional
+
+	"buttons": [
+		{
+			"id": "<custom ID for the button">, //optional; for authors wanting to trigger javascript from button clicks
+
+			"image": "<button image filename>",
+			"imageHover": "<button hover image filename>", //optional
+			"imageDown": "<button down image filename>", //optional
+			"imageAltText": "<alt text describing the button image>",
+			"pixelArt": "<true/false>", //true means we get nice crisp pixels
+
+			"destination": "<where to go on click>", //can be regular url or "room:<roomId>" to go to another room
+			"tooltip": "<text to display on mouseover>",
+
+			"top": "<y-position in % of parent>",
+			"left": "<x-position in % of parent>",
+			"width": "<width in % of parent>",
+			"height": "<height in % of parent>"
+		}
+	]
+}

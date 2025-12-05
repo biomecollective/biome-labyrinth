@@ -1,0 +1,85 @@
+body {
+	background-color: black;
+	font-family: sans-serif;
+	margin: 0;
+}
+
+#dirRequesterOuter {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(0.0, 0.0, 0.0, 0.5);
+}
+#dirRequesterInner {
+	max-width: 400px;
+	background-color: #f1e9df;
+	padding: 8px;
+}
+
+#main {
+	width: max-content;
+}
+
+#inspector {
+	padding: 8px;
+	margin: 0px 4px 0px 0px;
+	width: 288px;
+	background-color: #f1e9df;
+	resize: horizontal;
+	overflow: auto;
+	float: left;
+}
+
+.inspectorParam {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2px 0px 2px 0px;
+}
+
+#background {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+#room {
+	/*background-color: red;
+	width: 800px;
+	height: 600px;*/
+	float: left;
+}
+
+.tooltip {
+	position: absolute;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: black;
+	border-radius: 4px;
+	color: white;
+	opacity: 0;
+	pointer-events: none;
+	text-align: center;
+	transition: opacity 0.3s;
+}
+
+hr {
+	margin: 4px 0px 2px 0px;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.fileSelect {
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 4px 12px;
+	margin: 2px;
+	cursor: pointer;
+}

@@ -1,0 +1,17 @@
+Biome Gallery 2 ToDo
+--------------------
+- Better name!
+- Background image for body?
+- Alt text for buttons now we're using background-image?
+	- Not sure this is possible; but the tooltips should function similarly?
+- Implement room editor:
+	- Add button parameters to inspector when a button is loaded
+	- ...and remove them if a button is deleted
+	- Drag and drop into room div:
+		- First image dropped is automatically set as the background
+		- If there is a background, all future images are assumed to be buttons:
+			- Create parameters in inspector
+			- Set image to the dropped image
+			- Set top-left position to be the mouse position when it was dropped
+			- Ignore multiple files, only take the first one?
+	- Zoom in/out buttons for the room

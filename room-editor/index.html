@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Biome Gallery 2</title>
+
+	<link rel="stylesheet" href="room-editor.css"/>
+
+	<script src="FileSaver.js"></script>
+	<script src="room-editor.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="inspector">
+			<div class="inspectorParam">
+				<label for="roomName">Room Name</label>
+				<input type="text" name="roomName" id="roomName"></input>
+			</div>
+
+			<hr/>
+
+			<div class="inspectorParam">
+				<span>Background</span>
+				<label class="fileSelect" for="background" id="backgroundLabel">Select Image</label>
+				<input type="file" name="background" id="background" accept="image/*"></input>
+			</div>
+
+			<div class="inspectorParam">
+				<label for="altText">Alt Text</label>
+				<input type="text" name="altText" id="altText"></input>
+			</div>
+
+			<div class="inspectorParam">
+				<label for="pixelArt">Pixel Art</label>
+				<input type="checkbox" name="pixelArt" id="pixelArt"></input>
+			</div>
+
+			<div class="inspectorParam">
+				<label for="pageColour">Page Colour</label>
+				<input type="color" name="pageColour" id="pageColour"></input>
+			</div>
+
+			<hr/>
+
+			<div class="inspectorParam">
+				<span>Script</span>
+				<label class="fileSelect" for="script" id="scriptLabel">Select Script</label>
+				<input type="file" name="script" id="script" accept=".js"></input>
+			</div>
+
+			<hr/>
+			
+			<div class="inspectorParam">
+				<label for="author">Author</label>
+				<input type="text" name="author" id="author"></input>
+			</div>
+			
+			<div class="inspectorParam">
+				<label for="authorLink">Author Link</label>
+				<input type="text" name="authorLink" id="authorLink"></input>
+			</div>
+
+			<hr/>
+
+			<p>Buttons</p>
+
+			<div id="inspectorButtons">
+			</div>
+
+			<button class="fileSelect" type="button" id="addButton">Add</button>
+
+			<hr/>
+			
+			<div class="inspectorParam">
+				<button class="fileSelect" type="button" id="saveRoom">Save Room</button>
+				<button class="fileSelect" type="button" id="viewRoom">View Room</button>
+			</div>
+		</div>
+
+		<div id="room">
+			<img id="backgroundImage" src=""/>
+		</div>
+	</div>
+</body>

@@ -304,6 +304,7 @@ function addButton(data) {
 	let room = document.getElementById("room");
 	let button = document.createElement("img");
 
+	button.id = `button${buttonId}`;
 	button.className = "roomButton";
 	button.draggable = true;
 	button.style.left = "0%";
@@ -330,6 +331,28 @@ function addButton(data) {
 	});
 	runIfPresent(data, "height", () => {
 		button.style.width = `${data.height}%`;
+	});
+
+	let dragOffsetX = 0;
+	let dragOffsetY = 0;
+	button.addEventListener("dragstart", (event) => {
+		dragOffsetX = button.offsetLeft - event.clientX;
+		dragOffsetY = button.offsetTop - event.clientY;
+	});
+	button.addEventListener("dragover", (event) => {
+		let newPosX = ((event.clientX + dragOffsetX)/roomWidth) * 100;
+		let newPosY = ((event.clientY + dragOffsetY)/roomHeight) * 100;
+
+		button.style.left = `${newPosX}%`;
+		button.style.top = `${newPosY}%`;
+
+		document.getElementById(`${button.id}-left`).value = `${newPosX}%`;
+		document.getElementById(`${button.id}-top`).value = `${newPosY}%`;
+
+		event.preventDefault();
+	});
+	button.addEventListener("dragend", (event) => {
+		console.log(`Drag end`);
 	});
 
 	room.appendChild(button);

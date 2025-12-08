@@ -19,4 +19,6 @@ Biome Gallery 2 ToDo
 			- Set top-left position to be the mouse position when it was dropped
 			- Ignore multiple files, only take the first one?
 	- Zoom in/out buttons for the room
+	- Restrict text editors to specific characters (no spaces for button IDs,
+	  only numbers for positions/sizes, no spaces for URLs)
 - Tooltips persist on mobile after clicking buttons

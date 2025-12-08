@@ -5,12 +5,6 @@ Biome Gallery 2 ToDo
 - Alt text for buttons now we're using background-image?
 	- Not sure this is possible; but the tooltips should function similarly?
 - Implement room editor:
-	- Implement draggable button in room
-		- Img with src set to button image
-		- Positioned top left in % relative to parent div
-		- When added calculate size in % relative to parent div size
-		- Responds to drag events to set position
-			- Update inspector when moved
 	- Drag and drop into room div:
 		- First image dropped is automatically set as the background
 		- If there is a background, all future images are assumed to be buttons:
@@ -21,4 +15,6 @@ Biome Gallery 2 ToDo
 	- Zoom in/out buttons for the room
 	- Restrict text editors to specific characters (no spaces for button IDs,
 	  only numbers for positions/sizes, no spaces for URLs)
+	- Update button position, size when changing left/top/width/height in
+	  inspector
 - Tooltips persist on mobile after clicking buttons

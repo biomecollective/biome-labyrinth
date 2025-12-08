@@ -1,0 +1,26 @@
+{
+	"name": "Lobby",
+	"image": "background.png",
+	"imageAltText": "The Biome Collective logo.",
+	"pixelArt": true,
+	"backgroundColour": "#3d2c4c",
+	"script": "room.js",
+	"author": "Niall Moody",
+	"authorLink": "https://www.niallmoody.com/",
+	"buttons": [
+		{
+			"id": "enterButton",
+			"image": "button.png",
+			"imageHover": "buttonHover.png",
+			"imageDown": "buttonDown.png",
+			"imageAltText": "An arrow pointing up, or into the labyrinth.",
+			"pixelArt": true,
+			"destination": "room:geocities",
+			"tooltip": "Enter the labyrinth!",
+			"left": "42",
+			"top": "77.2",
+			"width": "15.2",
+			"height": "19.4"
+		}
+	]
+}

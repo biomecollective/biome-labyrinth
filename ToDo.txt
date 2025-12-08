@@ -5,12 +5,6 @@ Biome Gallery 2 ToDo
 - Alt text for buttons now we're using background-image?
 	- Not sure this is possible; but the tooltips should function similarly?
 - Implement room editor:
-	- Drag and drop into room div:
-		- If there is a background, all future images are assumed to be buttons:
-			- Create parameters in inspector
-			- Set image to the dropped image
-			- Set top-left position to be the mouse position when it was dropped
-			- Ignore multiple files, only take the first one?
 	- Zoom in/out buttons for the room
 	- Restrict text editors to specific characters (no spaces for button IDs,
 	  only numbers for positions/sizes, no spaces for URLs)

@@ -516,15 +516,31 @@ window.addEventListener("load", () => {
 	window.addEventListener("drop", (event) => {
 		const fileItems = [...event.dataTransfer.items].filter((item) => item.kind === "file");
 
-		console.log(event.dataTransfer);
-
 		if(fileItems.length > 0) {
-			//If we don't have a background image yet, set it.
-			if(document.getElementById("backgroundLabel").innerHTML == "Select Image") {
-				if(fileItems[0].type.startsWith("image/")) {
-					console.log(event.dataTransfer.files[0]);
+			for(let i=0;i<fileItems.length;++i) {
+				if(fileItems[i].type.startsWith("image/")) {
+					//If we don't have a background image yet, set it.
+					if(document.getElementById("backgroundLabel").innerHTML == "Select Image") {
+						setBackground(event.dataTransfer.files[i].name);
+					}
+					//Otherwise add the image as a button.
+					else {
+						let roomBox = document.getElementById("room").getBoundingClientRect();
+						let data = new Object();
 
-					setBackground(event.dataTransfer.files[0].name);
+						data.image = event.dataTransfer.files[i].name;
+						if(roomWidth > 0)
+							data.left = ((event.clientX - roomBox.x)/roomWidth) * 100;
+						else
+							data.left = 0;
+						if(roomHeight > 0)
+							data.top = ((event.clientY - roomBox.y)/roomHeight) * 100;
+						else
+							data.top = 0;
+
+						addButton(data);
+						addButtonControls(data);
+					}
 				}
 			}
 

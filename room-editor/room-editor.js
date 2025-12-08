@@ -1,5 +1,7 @@
 var roomId = "";
 var buttonId = 0;
+var roomWidth = 0;
+var roomHeight = 0;
 
 //Simplifies some of the room.json loading code.
 function runIfPresent(object, key, code) {
@@ -110,6 +112,7 @@ async function populateInspector() {
 
 		if(Object.hasOwn(roomObj, "buttons")) {
 			for(const button of roomObj.buttons) {
+				addButton(button);
 				addButtonControls(button);
 			}
 		}
@@ -277,6 +280,12 @@ function addButtonControls(data) {
 function setBackground(fileName) {
 	let backgroundImage = document.getElementById("backgroundImage");
 	let backgroundLabel = document.getElementById("backgroundLabel");
+	
+	//We use this to store the size of the room image.
+	backgroundImage.addEventListener("load", function() {
+		roomWidth = this.naturalWidth;
+		roomHeight = this.naturalHeight;
+	});
 
 	backgroundImage.src = "../rooms/" + roomId + "/" + fileName;
 	backgroundLabel.innerHTML = fileName;
@@ -289,6 +298,41 @@ function setPixelArt(val) {
 		document.getElementById("backgroundImage").style.imageRendering = "crisp-edges";
 	else
 		document.getElementById("backgroundImage").style.imageRendering = "auto";
+}
+
+function addButton(data) {
+	let room = document.getElementById("room");
+	let button = document.createElement("img");
+
+	button.className = "roomButton";
+	button.draggable = true;
+	button.style.left = "0%";
+	button.style.top = "0%";
+
+	runIfPresent(data, "image", () => {
+		button.src = "../rooms/" + roomId + "/" + data.image;
+	});
+	runIfPresent(data, "pixelArt", () => {
+		if(data.pixelArt)
+			button.style.imageRendering = "crisp-edges";
+		else
+			button.style.imageRendering = "smooth";
+	});
+
+	runIfPresent(data, "left", () => {
+		button.style.left = `${data.left}%`;
+	});
+	runIfPresent(data, "top", () => {
+		button.style.top = `${data.top}%`;
+	});
+	runIfPresent(data, "width", () => {
+		button.style.width = `${data.width}%`;
+	});
+	runIfPresent(data, "height", () => {
+		button.style.width = `${data.height}%`;
+	});
+
+	room.appendChild(button);
 }
 
 //Saves the room data to rooms/<roomId>/room.json
@@ -380,6 +424,7 @@ window.addEventListener("load", () => {
 
 	backgroundColour.addEventListener("change", (event) => {
 		document.body.style.backgroundColor = backgroundColour.value;
+		console.log(backgroundColour.value);
 	});
 
 	script.addEventListener("change", (event) => {
@@ -387,6 +432,7 @@ window.addEventListener("load", () => {
 	});
 
 	addButtonButton.addEventListener("click", (event) => {
+		addButton(null);
 		addButtonControls(null);
 	});
 

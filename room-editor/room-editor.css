@@ -53,6 +53,7 @@ body {
 }
 
 #room {
+	position: relative;
 	float: left;
 	padding: 0;
 	margin: 0;
@@ -60,6 +61,10 @@ body {
 
 #backgroundImage {
 	display: block;
+}
+
+.roomButton {
+	position: absolute;
 }
 
 hr {

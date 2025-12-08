@@ -6,7 +6,6 @@ Biome Gallery 2 ToDo
 	- Not sure this is possible; but the tooltips should function similarly?
 - Implement room editor:
 	- Drag and drop into room div:
-		- First image dropped is automatically set as the background
 		- If there is a background, all future images are assumed to be buttons:
 			- Create parameters in inspector
 			- Set image to the dropped image

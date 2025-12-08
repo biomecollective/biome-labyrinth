@@ -69,6 +69,9 @@ function createDirectoryRequester() {
 
 			dirRequesterOuter.remove();
 		}
+		else {
+			alert("Room directory is empty. Please add one or more image files to directory to use the room editor.");
+		}
 	});
 }
 
@@ -505,5 +508,34 @@ window.addEventListener("load", () => {
 	});
 	viewRoomButton.addEventListener("click", (event) => {
 		window.open(`../?room=${roomId}`);
+	});
+
+	//Set up file dropping.
+	//First, prevent the browser from just opening any image files you drop.
+	//The following 2 event listeners are apparently necessary to prevent this.
+	window.addEventListener("drop", (event) => {
+		const fileItems = [...event.dataTransfer.items].filter((item) => item.kind === "file");
+
+		console.log(event.dataTransfer);
+
+		if(fileItems.length > 0) {
+			//If we don't have a background image yet, set it.
+			if(document.getElementById("backgroundLabel").innerHTML == "Select Image") {
+				if(fileItems[0].type.startsWith("image/")) {
+					console.log(event.dataTransfer.files[0]);
+
+					setBackground(event.dataTransfer.files[0].name);
+				}
+			}
+
+			event.preventDefault();
+		}
+	});
+	window.addEventListener("dragover", (event) => {
+		const fileItems = [...event.dataTransfer.items].filter((item) => item.kind === "file");
+
+		if(fileItems.length > 0) {
+			event.preventDefault();
+		}
 	});
 });

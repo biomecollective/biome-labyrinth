@@ -1,0 +1,36 @@
+{
+	"name": "hole",
+	"image": "IMG_0656-edited3.png",
+	"imageAltText": "",
+	"pixelArt": false,
+	"backgroundColour": "#000000",
+	"author": "",
+	"authorLink": "",
+	"buttons": [
+		{
+			"id": "monsterHole",
+			"image": "monster-hole.png",
+			"imageHover": "monster-hole-hover.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "room:geocities",
+			"tooltip": "Into the hole!",
+			"left": "20.13888888888889",
+			"top": "7.199754901960784",
+			"width": "9.436274509803921",
+			"height": "3.615196078431373"
+		},
+		{
+			"id": "henry",
+			"image": "image.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "room:lobby",
+			"tooltip": "Dare you?",
+			"left": "34.64052287581699",
+			"top": "73.95833333333334",
+			"width": "35.00816993464052",
+			"height": "24.387254901960784"
+		}
+	]
+}

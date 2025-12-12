@@ -8,8 +8,11 @@ Biome Gallery 2 ToDo
 	- Zoom in/out buttons for the room
 	- Restrict text editors to specific characters (no spaces for button IDs,
 	  only numbers for positions/sizes, no spaces for URLs)
+		- Use `beforeinput` event to do this
 	- Update button position, size when changing left/top/width/height in
 	  inspector
 - Tooltips persist on mobile after clicking buttons
 - Update title with current room name
 - Better css for things like tooltips, room editor inspector
+- Switch to mouse move instead of drag for dragging buttons?
+	- Would skip the glitchy 2nd copy of the image

@@ -379,6 +379,19 @@ function addButton(data) {
 			buttonWidth.value = button.relativeWidth;
 		if(buttonHeight != null)
 			buttonHeight.value = button.relativeHeight;
+
+		//If the user drag & dropped the image, centre the button on that
+		//position.
+		runIfPresent(data, "dropped", () => {
+			let left = parseFloat(button.style.left) - (button.relativeWidth * 0.5);
+			let top = parseFloat(button.style.top) - (button.relativeHeight * 0.5);
+
+			button.style.left = `${left}%`;
+			button.style.top = `${top}%`;
+
+			document.getElementById(`${button.id}-left`).value = `${left}`;
+			document.getElementById(`${button.id}-top`).value = `${top}`;
+		});
 	});
 
 	let dragOffsetX = 0;
@@ -550,6 +563,10 @@ window.addEventListener("load", () => {
 							data.top = ((event.clientY - roomBox.y)/roomHeight) * 100;
 						else
 							data.top = 0;
+
+						//We use this to centre the button on the point that the
+						//user dropped it.
+						data.dropped = true;
 
 						addButton(data);
 					}

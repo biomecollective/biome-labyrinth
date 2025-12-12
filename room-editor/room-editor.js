@@ -3,6 +3,7 @@ var buttonId = 0;
 var roomWidth = 0;
 var roomHeight = 0;
 
+//-- Helper functions ----------------------------------------------------------
 //Simplifies some of the room.json loading code.
 function runIfPresent(object, key, code) {
 	if(Object.hasOwn(object, key)) {
@@ -22,7 +23,7 @@ function addInspectorParam(parent, code) {
 
 	parent.appendChild(paramDiv);
 }
-
+//-- Directory requester -------------------------------------------------------
 //Adds the directory request dialog on page load if we need it.
 function createDirectoryRequester() {
 	let dirRequesterOuter = document.createElement("div");
@@ -75,6 +76,7 @@ function createDirectoryRequester() {
 	});
 }
 
+//-- Inspector functions -------------------------------------------------------
 //Populates the inspector if we load a room that already has a room.json.
 async function populateInspector() {
 	try {
@@ -116,7 +118,6 @@ async function populateInspector() {
 		if(Object.hasOwn(roomObj, "buttons")) {
 			for(const button of roomObj.buttons) {
 				addButton(button);
-				addButtonControls(button);
 			}
 		}
 	}
@@ -125,6 +126,7 @@ async function populateInspector() {
 	}
 }
 
+//Only ever called from addButton function.
 function addButtonControls(data) {
 	let container = document.createElement("details");
 	let summary = document.createElement("summary");
@@ -306,6 +308,7 @@ function addButtonControls(data) {
 	++buttonId;
 }
 
+//-- Update room elements functions --------------------------------------------
 function setBackground(fileName) {
 	let backgroundImage = document.getElementById("backgroundImage");
 	let backgroundLabel = document.getElementById("backgroundLabel");
@@ -398,8 +401,11 @@ function addButton(data) {
 	});
 
 	room.appendChild(button);
+
+	addButtonControls(data);
 }
 
+//-- Save room -----------------------------------------------------------------
 //Saves the room data to rooms/<roomId>/room.json
 function saveRoom() {
 	let roomObj = new Object();
@@ -466,6 +472,7 @@ function saveRoom() {
 	saveAs(blob, `room.json`);
 }
 
+//-- Initialisation ------------------------------------------------------------
 window.addEventListener("load", () => {
 	const urlParams = new URLSearchParams(document.location.search);
 	let urlRoom = urlParams.get("room");
@@ -507,7 +514,6 @@ window.addEventListener("load", () => {
 
 	addButtonButton.addEventListener("click", (event) => {
 		addButton(null);
-		addButtonControls(null);
 	});
 
 	saveRoomButton.addEventListener("click", (event) => {
@@ -546,7 +552,6 @@ window.addEventListener("load", () => {
 							data.top = 0;
 
 						addButton(data);
-						addButtonControls(data);
 					}
 				}
 			}

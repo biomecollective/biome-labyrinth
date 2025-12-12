@@ -435,9 +435,16 @@ function saveRoom() {
 
 		buttonObj.id = document.getElementById(`${currentId}-buttonId`).value;
 
-		buttonObj.image = document.getElementById(`${currentId}-imageLabel`).innerHTML;
-		buttonObj.imageHover = document.getElementById(`${currentId}-imageHoverLabel`).innerHTML;
-		buttonObj.imageDown = document.getElementById(`${currentId}-imageDownLabel`).innerHTML;
+		let buttonImage = document.getElementById(`${currentId}-imageLabel`).innerHTML;
+		let hoverImage = document.getElementById(`${currentId}-imageHoverLabel`).innerHTML;
+		let downImage = document.getElementById(`${currentId}-imageDownLabel`).innerHTML;
+
+		if(buttonImage != "Select Image")
+			buttonObj.image = buttonImage;
+		if (hoverImage != "Select Image")
+			buttonObj.imageHover = hoverImage;
+		if (downImage != "Select Image")
+			buttonObj.imageDown = downImage;
 		buttonObj.imageAltText = document.getElementById(`${currentId}-imageAltText`).value;
 		buttonObj.pixelArt = document.getElementById(`${currentId}-pixelArt`).checked;
 

@@ -65,6 +65,11 @@ body {
 
 .roomButton {
 	position: absolute;
+	cursor: pointer;
+}
+
+.roomButton:hover {
+	border: 1px solid white;
 }
 
 hr {

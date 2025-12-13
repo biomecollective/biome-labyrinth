@@ -2,6 +2,7 @@ var roomId = "";
 var buttonId = 0;
 var roomWidth = 0;
 var roomHeight = 0;
+var zoomLevel = 1.0;
 
 //-- Helper functions ----------------------------------------------------------
 //Simplifies some of the room.json loading code.
@@ -523,6 +524,8 @@ window.addEventListener("load", () => {
 	}
 
 	//Set up inspector event listeners.
+	let zoomOut = document.getElementById("zoomOut");
+	let zoomIn = document.getElementById("zoomIn");
 	let background = document.getElementById("background");
 	let pixelArt = document.getElementById("pixelArt");
 	let backgroundColour = document.getElementById("pageColour");
@@ -530,6 +533,15 @@ window.addEventListener("load", () => {
 	let addButtonButton = document.getElementById("addButton");
 	let saveRoomButton = document.getElementById("saveRoom");
 	let viewRoomButton = document.getElementById("viewRoom");
+
+	zoomOut.addEventListener("click", (event) => {
+		zoomLevel *= 1.0/1.25;
+		document.getElementById("room").style.transform = `scale(${zoomLevel})`;
+	});
+	zoomIn.addEventListener("click", (event) => {
+		zoomLevel *= 1.25;
+		document.getElementById("room").style.transform = `scale(${zoomLevel})`;
+	});
 
 	background.addEventListener("change", (event) => {
 		setBackground(event.target.files[0].name);

@@ -5,7 +5,6 @@ Biome Gallery 2 ToDo
 - Alt text for buttons now we're using background-image?
 	- Not sure this is possible; but the tooltips should function similarly?
 - Implement room editor:
-	- Zoom in/out buttons for the room
 	- Update button position, size when changing left/top/width/height in
 	  inspector
 - Tooltips persist on mobile after clicking buttons

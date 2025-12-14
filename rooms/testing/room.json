@@ -31,10 +31,10 @@
 			"pixelArt": true,
 			"destination": "room:lobby",
 			"tooltip": "Back to the lobby!",
-			"left": "74.375",
-			"top": "77.22222222222223",
-			"width": "15.208333333333332",
-			"height": "19.444444444444446"
+			"left": "77.29166666666667",
+			"top": "54.166666666666664",
+			"width": "24",
+			"height": "48"
 		}
 	]
 }

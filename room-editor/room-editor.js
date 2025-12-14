@@ -317,6 +317,27 @@ function addButtonControls(data) {
 			button.style.imageRendering = "auto";
 	});
 
+	container.querySelector(`#${idBase}-left`).addEventListener("change", () => {
+		let button = document.getElementById(idBase);
+
+		button.style.left = `${container.querySelector(`#${idBase}-left`).value}%`;
+	});
+	container.querySelector(`#${idBase}-top`).addEventListener("change", () => {
+		let button = document.getElementById(idBase);
+
+		button.style.top = `${container.querySelector(`#${idBase}-top`).value}%`;
+	});
+	container.querySelector(`#${idBase}-width`).addEventListener("change", () => {
+		let button = document.getElementById(idBase);
+
+		button.style.width = `${container.querySelector(`#${idBase}-width`).value}%`;
+	});
+	container.querySelector(`#${idBase}-height`).addEventListener("change", () => {
+		let button = document.getElementById(idBase);
+
+		button.style.height = `${container.querySelector(`#${idBase}-height`).value}%`;
+	});
+
 	container.querySelector(`#${idBase}-delete`).addEventListener("click", () => {
 		document.getElementById(idBase).remove();
 

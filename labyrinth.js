@@ -24,7 +24,7 @@ function createButton(room, data) {
 
 	runIfPresent(data, "image", () => {
 		buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.image}")`;
-		buttonObj.style.backgroundSize = "cover";
+		buttonObj.style.backgroundSize = "100% 100%";
 		buttonObj.style.backgroundPosition = "center";
 	});
 

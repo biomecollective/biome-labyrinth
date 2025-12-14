@@ -42,9 +42,9 @@ button.roomButton {
 	width: 100%;
 	background-color: transparent;
 	background-repeat:no-repeat;
+	background-size: 100% 100%;
 	border: none;
 	cursor: pointer;
-	overflow: hidden;
 }
 
 .tooltip {

@@ -5,8 +5,6 @@ Biome Gallery 2 ToDo
 - Alt text for buttons now we're using background-image?
 	- Not sure this is possible; but the tooltips should function similarly?
 - Room editor:
-	- Update button position, size when changing left/top/width/height in
-	  inspector
 	- Switch to mouse move instead of drag for dragging buttons?
 		- Would skip the glitchy 2nd copy of the image
 	- Draggable handles for buttons (scale + rotate)

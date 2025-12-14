@@ -74,7 +74,7 @@ summary {
 }
 
 .roomButton:hover {
-	border: 1px solid white;
+	outline: medium solid white;
 }
 
 hr {

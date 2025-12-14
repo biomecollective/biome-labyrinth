@@ -4,12 +4,13 @@ Biome Gallery 2 ToDo
 - Background image for body?
 - Alt text for buttons now we're using background-image?
 	- Not sure this is possible; but the tooltips should function similarly?
-- Implement room editor:
+- Room editor:
 	- Update button position, size when changing left/top/width/height in
 	  inspector
+	- Switch to mouse move instead of drag for dragging buttons?
+		- Would skip the glitchy 2nd copy of the image
+	- Draggable handles for buttons (scale + rotate)
 - Tooltips persist on mobile after clicking buttons
 - Update title with current room name
 - Better css for things like tooltips, room editor inspector
-- Switch to mouse move instead of drag for dragging buttons?
-	- Would skip the glitchy 2nd copy of the image
 - Add error message if navigating to a room that doesn't exist

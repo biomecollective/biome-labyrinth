@@ -9,6 +9,5 @@ Biome Gallery 2 ToDo
 		- Would skip the glitchy 2nd copy of the image
 	- Draggable handles for buttons (scale + rotate)
 - Tooltips persist on mobile after clicking buttons
-- Update title with current room name
 - Better css for things like tooltips, room editor inspector
 - Add error message if navigating to a room that doesn't exist

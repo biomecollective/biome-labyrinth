@@ -1,75 +1,60 @@
 {
 	"name": "Geocities",
-
 	"image": "background.png",
 	"imageAltText": "Tiling stars.",
 	"pixelArt": true,
-
+	"backgroundColour": "#000000",
 	"script": "room.js",
-
 	"author": "Niall Moody",
 	"authorLink": "https://www.niallmoody.com/",
-
 	"buttons": [
 		{
 			"id": "backButton",
-
 			"image": "blue_left.gif",
 			"imageAltText": "An animated arrow pointing left.",
 			"pixelArt": false,
-
 			"destination": "room:lobby",
 			"tooltip": "Back to the lobby",
-
 			"left": "0",
 			"top": "0",
 			"width": "9.25",
-			"height": "11.16"
+			"height": "11.166666666666666"
 		},
 		{
 			"id": "forwardButton",
-
 			"image": "blue_right.gif",
 			"imageAltText": "An animated arrow pointing right.",
 			"pixelArt": false,
-
-			"destination": "",
-			"tooltip": "What goes here?",
-
+			"destination": "room:hole",
+			"tooltip": "Visit the hole!?",
 			"left": "90.75",
 			"top": "0",
 			"width": "9.25",
-			"height": "11.16"
+			"height": "11.166666666666666"
 		},
 		{
 			"id": "starButton",
-
 			"image": "star2.gif",
 			"imageAltText": "An animated star.",
 			"pixelArt": true,
-
 			"destination": "",
 			"tooltip": "Click for dancing!",
-
 			"left": "48.25",
 			"top": "22.67",
 			"width": "6",
-			"height": "7.67"
+			"height": "7.666666666666666"
 		},
 		{
 			"id": "planetButton",
-
 			"image": "planet.gif",
 			"imageAltText": "An animated planet.",
 			"pixelArt": true,
-
 			"destination": "",
 			"tooltip": "",
-
 			"left": "32.75",
 			"top": "45.33",
 			"width": "37.75",
-			"height": "41.17"
+			"height": "41.16666666666667"
 		}
 	]
 }

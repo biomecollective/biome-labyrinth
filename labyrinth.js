@@ -156,26 +156,38 @@ async function loadRoomData() {
 
 		let room = document.getElementById("room");
 
+		runIfPresent(roomObj, "name", () => {
+			document.title = `Biome Labyrinth - ${roomObj.name}`;
+		});
+
 		let roomImg = document.createElement("img");
-		roomImg.src = `./rooms/${roomId}/${roomObj.image}`;
-		roomImg.alt = roomObj.imageAltText;
+
+		runIfPresent(roomObj, "image", () => {
+			roomImg.src = `./rooms/${roomId}/${roomObj.image}`;
+		});
+
+		runIfPresent(roomObj, "image", () => {
+			roomImg.alt = roomObj.imageAltText;
+		});
+
 		roomImg.style.width = "100%";
-		if(roomObj.pixelArt)
-			roomImg.style.imageRendering = "crisp-edges";
+
+		runIfPresent(roomObj, "pixelArt", () => {
+			if(roomObj.pixelArt)
+				roomImg.style.imageRendering = "crisp-edges";
+		});
 
 		room.appendChild(roomImg);
 
-		if(Object.hasOwn(roomObj, "backgroundColour")) {
-			if(roomObj.backgroundColour != "") {
-				document.body.style.backgroundColor = roomObj.backgroundColour;
-			}
-		}
+		runIfPresent(roomObj, "backgroundColour", () => {
+			document.body.style.backgroundColor = roomObj.backgroundColour;
+		});
 
-		if(Object.hasOwn(roomObj, "buttons")) {
+		runIfPresent(roomObj, "buttons", () => {
 			roomObj.buttons.forEach((button, index) => {
 				createButton(room, button);
 			});
-		}
+		});
 
 		if(Object.hasOwn(roomObj, "script")) {
 			await import(`./rooms/${roomId}/${roomObj.script}`);

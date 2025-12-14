@@ -1,6 +1,6 @@
 {
 	"name": "hole",
-	"image": "IMG_0656-edited3.png",
+	"image": "IMG_0656-edited3.jpg",
 	"imageAltText": "",
 	"pixelArt": false,
 	"backgroundColour": "#000000",
@@ -22,7 +22,7 @@
 		},
 		{
 			"id": "henry",
-			"image": "image.png",
+			"image": "image.jpg",
 			"imageAltText": "",
 			"pixelArt": false,
 			"destination": "room:lobby",

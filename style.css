@@ -59,3 +59,18 @@ button.roomButton {
 	text-align: center;
 	transition: opacity 0.3s;
 }
+
+.errorContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.errorMessage {
+	margin: 0 auto;
+	color: white;
+	background-color: black;
+	text-align: center;
+	font-size: 200%;
+}

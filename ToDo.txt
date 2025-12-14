@@ -10,4 +10,3 @@ Biome Gallery 2 ToDo
 	- Draggable handles for buttons (scale + rotate)
 - Tooltips persist on mobile after clicking buttons
 - Better css for things like tooltips, room editor inspector
-- Add error message if navigating to a room that doesn't exist

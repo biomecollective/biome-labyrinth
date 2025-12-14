@@ -194,7 +194,12 @@ async function loadRoomData() {
 		}
 	}
 	catch(error) {
-		console.log(`Error fetching room data. Error: ${error}`);
+		console.log(`Error fetching room data. ${error}`);
+
+		let room = document.getElementById("room");
+
+		room.style.height = `calc(100vh - 32px)`;
+		room.innerHTML = `<div class="errorContainer"><p class="errorMessage">Could not find room: <strong>${roomId}</strong></p></div>`;
 	}
 }
 

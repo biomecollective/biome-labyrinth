@@ -9,5 +9,7 @@ Biome Gallery 2 ToDo
 		- Would skip the glitchy 2nd copy of the image
 	- Draggable handles for buttons (scale + rotate)
 	- Dragging buttons does not really work when the room is zoomed out
+	- Only room div should have scrollbars when background image is bigger than
+	  window; inspector should be separate
 - Tooltips persist on mobile after clicking buttons
 - Better css for things like tooltips, room editor inspector

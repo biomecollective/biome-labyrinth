@@ -439,23 +439,32 @@ function addButton(data) {
 		});
 	});
 
+	button.labDragging = false;
+
 	let dragOffsetX = 0;
 	let dragOffsetY = 0;
 	button.addEventListener("dragstart", (event) => {
 		dragOffsetX = button.offsetLeft - event.clientX;
 		dragOffsetY = button.offsetTop - event.clientY;
+		
+		button.labDragging = true;
 	});
 	button.addEventListener("dragover", (event) => {
-		let newPosX = ((event.clientX + dragOffsetX)/roomWidth) * 100;
-		let newPosY = ((event.clientY + dragOffsetY)/roomHeight) * 100;
+		if(button.labDragging) {
+			let newPosX = ((event.clientX + dragOffsetX)/roomWidth) * 100;
+			let newPosY = ((event.clientY + dragOffsetY)/roomHeight) * 100;
 
-		button.style.left = `${newPosX}%`;
-		button.style.top = `${newPosY}%`;
+			button.style.left = `${newPosX}%`;
+			button.style.top = `${newPosY}%`;
 
-		document.getElementById(`${button.id}-left`).value = `${newPosX}`;
-		document.getElementById(`${button.id}-top`).value = `${newPosY}`;
+			document.getElementById(`${button.id}-left`).value = `${newPosX}`;
+			document.getElementById(`${button.id}-top`).value = `${newPosY}`;
 
-		event.preventDefault();
+			event.preventDefault();
+		}
+	});
+	button.addEventListener("dragend", (event) => {
+		button.labDragging = false;
 	});
 
 	room.appendChild(button);

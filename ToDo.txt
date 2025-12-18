@@ -7,6 +7,8 @@ Biome Gallery 2 ToDo
 - Room editor:
 	- Switch to mouse move instead of drag for dragging buttons?
 		- Would skip the glitchy 2nd copy of the image
+		- Would (I think) also fix the weird drag behaviour on zoom, and when
+		  dragging a button over another
 	- Draggable handles for buttons (scale + rotate)
 	- Dragging buttons does not really work when the room is zoomed out
 	- Only room div should have scrollbars when background image is bigger than

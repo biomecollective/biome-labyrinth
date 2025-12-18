@@ -21,6 +21,20 @@
 			"top": "77.2",
 			"width": "15.2",
 			"height": "19.4"
+		},
+		{
+			"id": "woo2025",
+			"image": "woo2025.png",
+			"imageHover": "woo2025Hover.png",
+			"imageDown": "",
+			"imageAltText": "The words woo2025 gallery style.",
+			"pixelArt": true,
+			"destination": "room:woo2025",
+			"tooltip": "woo! a collage of biome community activities from the past year",
+			"left": "2",
+			"top": "2",
+			"width": "20",
+			"height": "10"
 		}
 	]
 }

@@ -12,7 +12,7 @@ Biome Gallery 2 ToDo
 	- Draggable handles for buttons (scale + rotate)
 	- Dragging buttons does not really work when the room is zoomed out
 	- Confirm when leaving page if you've not saved your changes
-	- Button to reset size to default
+	- Button to reset button size to default
 - Tooltips persist on mobile after clicking buttons
 - Better css for things like tooltips, room editor inspector
 - Regarding the BDS chat at the meeting, should we move away from github?

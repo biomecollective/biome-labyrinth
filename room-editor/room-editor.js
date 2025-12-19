@@ -237,7 +237,7 @@ function addButtonControls(data) {
 
 	//Delete button.
 	addInspectorParam(container, () => {
-		return `<label for="${idBase}-delete">&nbsp;</label>
+		return `<button class="fileSelect" type="button" id="${idBase}-resetSize">Reset Size</button>
 				<button class="fileSelect" type="button" id="${idBase}-delete">Delete</button>`;
 	});
 
@@ -330,16 +330,12 @@ function addButtonControls(data) {
 		let newWidth = container.querySelector(`#${idBase}-width`).value;
 
 		button.style.width = `${newWidth}%`;
-		
-		button.labAspectRatio = container.querySelector(`#${idBase}-height`).value/newWidth;
 	});
 	container.querySelector(`#${idBase}-height`).addEventListener("change", () => {
 		let button = document.getElementById(idBase);
 		let newHeight = container.querySelector(`#${idBase}-height`).value;
 
 		button.style.height = `${newHeight}%`;
-		
-		button.labAspectRatio = newHeight/container.querySelector(`#${idBase}-width`).value;
 	});
 
 	container.querySelector(`#${idBase}-delete`).addEventListener("click", () => {
@@ -366,7 +362,6 @@ function setBackground(fileName) {
 	//Check whether we potentially need to update the buttons' aspect ratios.
 	if(backgroundImage.src != "") {
 		updateButtons = true;
-		console.log(`setBackground: Updating button sizes...`);
 	}
 	
 	//We use this to store the size of the room image.
@@ -379,6 +374,11 @@ function setBackground(fileName) {
 		roomWidth = this.naturalWidth;
 		roomHeight = this.naturalHeight;
 		newAspectRatio = roomHeight/roomWidth;
+
+		//oldWidth will be 0 if this is the first time we've set the background
+		//image.
+		if(oldWidth == 0)
+			oldAspectRatio = newAspectRatio;
 		
 		//If the aspect ratio of the background image has changed, update all
 		//buttons to ensure their aspect ratio stays as it was.
@@ -386,7 +386,7 @@ function setBackground(fileName) {
 			let buttons = document.querySelectorAll(".roomButton");
 
 			buttons.forEach((button) => {
-				runIfPresent(button, "labAspectRatio", () => {
+				runIfPresent(button, "labRelativeWidth", () => {
 					let origW = button.naturalWidth;
 					let origH = button.naturalHeight;
 					let scaledW = button.labRelativeWidth/100.0;
@@ -463,7 +463,6 @@ function addButton(data) {
 	button.addEventListener("load", function() {
 		button.labRelativeWidth = (this.naturalWidth/roomWidth) * 100;
 		button.labRelativeHeight = (this.naturalHeight/roomHeight) * 100;
-		button.labAspectRatio = this.naturalHeight/this.naturalWidth;
 
 		runIfPresent(data, "width", () => {
 			button.labRelativeWidth = data.width;
@@ -476,9 +475,9 @@ function addButton(data) {
 		let buttonHeight = document.getElementById(`${button.id}-height`);
 
 		if(buttonWidth != null)
-			buttonWidth.value = data.width;
+			buttonWidth.value = button.labRelativeWidth;
 		if(buttonHeight != null)
-			buttonHeight.value = data.height;
+			buttonHeight.value = button.labRelativeHeight;
 
 		//If the user drag & dropped the image, centre the button on that
 		//position.

@@ -338,6 +338,21 @@ function addButtonControls(data) {
 		button.style.height = `${newHeight}%`;
 	});
 
+	container.querySelector(`#${idBase}-resetSize`).addEventListener("click", () => {
+		let button = document.getElementById(idBase);
+		let buttonWidth = button.naturalWidth;
+		let buttonHeight = button.naturalHeight;
+
+		buttonWidth = (buttonWidth/roomWidth) * 100.0;
+		buttonHeight = (buttonHeight/roomHeight) * 100.0;
+
+		button.style.width = `${buttonWidth}%`;
+		button.style.height = `${buttonHeight}%`;
+
+		container.querySelector(`#${idBase}-width`).value = buttonWidth;
+		container.querySelector(`#${idBase}-height`).value = buttonHeight;
+	});
+
 	container.querySelector(`#${idBase}-delete`).addEventListener("click", () => {
 		document.getElementById(idBase).remove();
 

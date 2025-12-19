@@ -12,6 +12,9 @@ Biome Gallery 2 ToDo
 	- Draggable handles for buttons (scale + rotate)
 	- Dragging buttons does not really work when the room is zoomed out
 	- Confirm when leaving page if you've not saved your changes
+	- Add eyedropper for background colour
+		- Eyedropper API not supported on firefox :(
+	- Respect user's light mode/dark mode preferences
 - Tooltips persist on mobile after clicking buttons
 - Better css for things like tooltips, room editor inspector
 - Regarding the BDS chat at the meeting, should we move away from github?

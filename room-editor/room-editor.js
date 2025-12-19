@@ -120,6 +120,9 @@ async function populateInspector() {
 			document.getElementById("pageColour").value = roomObj.backgroundColour;
 
 			document.body.style.backgroundColor = roomObj.backgroundColour;
+
+			//To update the colour picker.
+			document.querySelector('#pageColour').dispatchEvent(new Event('input', { bubbles: true }));
 		});
 		runIfPresent(roomObj, "script", () => {
 			document.getElementById("scriptLabel").innerHTML = roomObj.script;
@@ -573,8 +576,6 @@ function saveRoom() {
 		const currentId = button.id.substring(0, button.id.indexOf("-"));
 		let buttonObj = new Object();
 
-		console.log(currentId);
-
 		buttonObj.id = document.getElementById(`${currentId}-buttonId`).value;
 
 		let buttonImage = document.getElementById(`${currentId}-imageLabel`).innerHTML;
@@ -601,8 +602,6 @@ function saveRoom() {
 		roomObj.buttons.push(buttonObj);
 	});
 
-	console.log(roomObj);
-
 	let roomJson = JSON.stringify(roomObj, null, "\t");
 	let blob = new Blob([roomJson], {type: "text/plain;charset=utf-8"});
 	saveAs(blob, `room.json`);
@@ -621,6 +620,12 @@ window.addEventListener("load", () => {
 
 		populateInspector();
 	}
+
+	Coloris({
+		theme: 'polaroid',
+		themeMode: 'auto',
+		alpha: false
+	});
 
 	//Set up inspector event listeners.
 	let zoomOut = document.getElementById("zoomOut");
@@ -650,9 +655,8 @@ window.addEventListener("load", () => {
 		setPixelArt(pixelArt.checked);
 	});
 
-	backgroundColour.addEventListener("change", (event) => {
+	backgroundColour.addEventListener("input", event => {
 		document.body.style.backgroundColor = backgroundColour.value;
-		console.log(backgroundColour.value);
 	});
 
 	script.addEventListener("change", (event) => {

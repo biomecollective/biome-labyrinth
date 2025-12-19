@@ -11,12 +11,12 @@ Biome Gallery 2 ToDo
 		  dragging a button over another
 	- Draggable handles for buttons (scale + rotate)
 	- Dragging buttons does not really work when the room is zoomed out
-	- Only room div should have scrollbars when background image is bigger than
-	  window; inspector should be separate
 	- Confirm when leaving page if you've not saved your changes
+	- Button to reset size to default
 - Tooltips persist on mobile after clicking buttons
 - Better css for things like tooltips, room editor inspector
 - Regarding the BDS chat at the meeting, should we move away from github?
 	- And if so, what alternatives offer easy hosting, automatically deployed on
 	  push?
 - Add favicon
+- Update readme to make the process of adding a room a little clearer

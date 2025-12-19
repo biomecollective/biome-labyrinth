@@ -395,17 +395,11 @@ function setBackground(fileName) {
 					let newScaleW = (scaledW * oldWidth)/origW;
 					let newScaleH = (scaledH * oldHeight)/origH;
 
-					console.log(`Button relative size: ${button.labRelativeWidth} : ${button.labRelativeHeight}`);
-					console.log(`Button natural size: ${button.naturalWidth} : ${button.naturalHeight}`);
-					console.log(`New scale values: ${newScaleW} : ${newScaleH}`);
-
 					let newW = ((origW/roomWidth) * newScaleW) * 100.0;
 					let newH = ((origH/roomHeight) * newScaleH) * 100.0;
 
 					button.labRelativeWidth = newW;
 					button.labRelativeHeight = newH;
-
-					console.log(`New relative size: ${newW} : ${newH}`);
 
 					button.style.width = `${newW}%`;
 					button.style.height = `${newH}%`;

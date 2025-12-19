@@ -23,20 +23,22 @@ body {
 }
 
 #main {
-	width: max-content;
+	width: 100vw;/*max-content;*/
 	padding: 0;
 	margin: 0;
+	display: flex;
 }
 
 #inspector {
 	padding: 8px;
-	width: 320px;
+	min-width: 320px;
 	background-color: #f1e9df;
 	resize: horizontal;
 	overflow-y: scroll;
 	float: left;
 	height: 100vh;
 	box-sizing: border-box;
+	flex: 1 1 auto;
 }
 
 summary {
@@ -54,6 +56,12 @@ summary {
 #background {
 	margin-left: auto;
 	margin-right: 0;
+}
+
+#roomContainer {
+	height: 100vh;
+	overflow: auto;
+	flex: 9 1 auto;
 }
 
 #room {

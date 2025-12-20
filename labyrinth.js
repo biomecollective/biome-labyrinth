@@ -89,42 +89,45 @@ function createButton(room, data) {
 	//children of the button as they get cut off by the button's viewport.
 	//(correct me if I'm wrong!)
 	runIfPresent(data, "tooltip", () => {
-		let tooltip = document.createElement("div");
+		//No point showing a tooltip div if there's no tooltip text.
+		if(data.tooltip != "") {
+			let tooltip = document.createElement("div");
 
-		tooltip.className = "tooltip";
-		tooltip.id = `tooltip${tooltipId}`;
-		++tooltipId;
+			tooltip.className = "tooltip";
+			tooltip.id = `tooltip${tooltipId}`;
+			++tooltipId;
 
-		buttonObj.setAttribute("aria-describedby", tooltip.id);
-		tooltip.setAttribute("role", "tooltip");
+			buttonObj.setAttribute("aria-describedby", tooltip.id);
+			tooltip.setAttribute("role", "tooltip");
 
-		tooltip.innerHTML = `<span>${data.tooltip}</span>`;
+			tooltip.innerHTML = `<span>${data.tooltip}</span>`;
 
-		//Position tooltip to be centred below the button.
-		tooltip.style.left = `${parseFloat(data.left)}%`;
-		tooltip.style.top = `${parseFloat(data.top) + parseFloat(data.height)}%`;
+			//Position tooltip to be centred below the button.
+			tooltip.style.left = `${parseFloat(data.left)}%`;
+			tooltip.style.top = `${parseFloat(data.top) + parseFloat(data.height)}%`;
 
-		//If the button is narrow, set the tooltip width to be wide enough
-		//that its text isn't squashed.
-		let width = parseFloat(data.width);
-		if(width < 20) {
-			width = 20;
+			//If the button is narrow, set the tooltip width to be wide enough
+			//that its text isn't squashed.
+			let width = parseFloat(data.width);
+			if(width < 20) {
+				width = 20;
 
-			let left = parseFloat(data.left) + (parseFloat(data.width)/2) - 10;
+				let left = parseFloat(data.left) + (parseFloat(data.width)/2) - 10;
 
-			tooltip.style.left = `${left}%`;
+				tooltip.style.left = `${left}%`;
+			}
+			tooltip.style.width = `${width}%`;
+
+			room.appendChild(tooltip);
+
+			//Show/hide tooltip depending on mouseover.
+			buttonObj.addEventListener("mouseover", () => {
+				tooltip.style.opacity = "75%";
+			});
+			buttonObj.addEventListener("mouseout", () => {
+				tooltip.style.opacity = "0";
+			});
 		}
-		tooltip.style.width = `${width}%`;
-
-		room.appendChild(tooltip);
-
-		//Show/hide tooltip depending on mouseover.
-		buttonObj.addEventListener("mouseover", () => {
-			tooltip.style.opacity = "75%";
-		});
-		buttonObj.addEventListener("mouseout", () => {
-			tooltip.style.opacity = "0";
-		});
 	});
 
 	//Add event handler with the room destination.

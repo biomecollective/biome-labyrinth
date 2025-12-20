@@ -21,11 +21,14 @@
 	- [ ] Eyedropper API not supported on firefox :(
 - [ ] Respect user's light mode/dark mode preferences
 - [ ] Update readme to make the process of adding a room a little clearer
+- [ ] Check button aspect ratio is correctly updated if you replace the image
 
 ### Labyrinth
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon
+- [ ] Draw tooltips above buttons, not interleaved (buttons can currently
+	  overlap other buttons' tooltips)
 
 ## Longer Term
 

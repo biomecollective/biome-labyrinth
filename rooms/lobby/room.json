@@ -15,7 +15,7 @@
 			"imageDown": "buttonDown.png",
 			"imageAltText": "An arrow pointing up, or into the labyrinth.",
 			"pixelArt": true,
-			"destination": "room:geocities",
+			"destination": "room:hallway",
 			"tooltip": "Enter the labyrinth!",
 			"left": "42",
 			"top": "77.2",

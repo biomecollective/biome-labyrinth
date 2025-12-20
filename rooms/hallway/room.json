@@ -1,0 +1,76 @@
+{
+	"name": "hallway",
+	"image": "hallway.jpg",
+	"imageAltText": "A hallway with 5 doors, in watercolours and ink.",
+	"pixelArt": false,
+	"backgroundColour": "#f6f1e9",
+	"author": "Niall Moody",
+	"authorLink": "https://www.niallmoody.com/",
+	"buttons": [
+		{
+			"id": "geocities",
+			"image": "door1-closed.png",
+			"imageHover": "door1-open.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "room:geocities",
+			"tooltip": "To the year 1999!",
+			"left": "17.552083333333332",
+			"top": "9.906001446131597",
+			"width": "7.864583333333333",
+			"height": "81.12798264642083"
+		},
+		{
+			"id": "hole",
+			"image": "door2-closed.png",
+			"imageHover": "door2-open.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "room:hole",
+			"tooltip": "Enter The Hole",
+			"left": "30.78125",
+			"top": "20.10122921185828",
+			"width": "5.833333333333333",
+			"height": "46.7823571945047"
+		},
+		{
+			"id": "door3",
+			"image": "door3-closed.png",
+			"imageHover": "door3-open.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "",
+			"tooltip": "...TBC...",
+			"left": "44.375",
+			"top": "23.06579898770788",
+			"width": "11.09375",
+			"height": "30.9472161966739"
+		},
+		{
+			"id": "door4",
+			"image": "door4-closed.png",
+			"imageHover": "door4-open.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "",
+			"tooltip": "...TBC...",
+			"left": "62.34375",
+			"top": "19.233550253073027",
+			"width": "6.875000000000001",
+			"height": "49.31308749096168"
+		},
+		{
+			"id": "door5",
+			"image": "door5-closed.png",
+			"imageHover": "door5-open.png",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "",
+			"tooltip": "...TBC...",
+			"left": "72.91666666666666",
+			"top": "11.135213304410701",
+			"width": "8.59375",
+			"height": "80.91106290672451"
+		}
+	]
+}

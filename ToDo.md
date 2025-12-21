@@ -25,6 +25,7 @@
 - [ ] Respect user's light mode/dark mode preferences
 - [ ] Update readme to make the process of adding a room a little clearer
 - [ ] Check button aspect ratio is correctly updated if you replace the image
+- [x] Fix image drag and drop when zoomed in
 - [x] Dragging buttons does not really work when the room is zoomed out
 
 ### Labyrinth

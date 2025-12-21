@@ -700,11 +700,11 @@ window.addEventListener("load", () => {
 
 						data.image = event.dataTransfer.files[i].name;
 						if(roomWidth > 0)
-							data.left = ((event.clientX - roomBox.x)/roomWidth) * 100;
+							data.left = (((event.clientX - roomBox.x)/zoomLevel)/roomWidth) * 100;
 						else
 							data.left = 0;
 						if(roomHeight > 0)
-							data.top = ((event.clientY - roomBox.y)/roomHeight) * 100;
+							data.top = (((event.clientY - roomBox.y)/zoomLevel)/roomHeight) * 100;
 						else
 							data.top = 0;
 

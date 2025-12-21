@@ -15,13 +15,13 @@
 	- [ ] Would (I think) also fix the weird drag behaviour on zoom, and when
 		  dragging a button over another
 - [ ] Draggable handles for buttons (scale + rotate)
-- [ ] Dragging buttons does not really work when the room is zoomed out
 - [ ] Confirm when leaving page if you've not saved your changes
 - [ ] Add eyedropper for background colour
 	- [ ] Eyedropper API not supported on firefox :(
 - [ ] Respect user's light mode/dark mode preferences
 - [ ] Update readme to make the process of adding a room a little clearer
 - [ ] Check button aspect ratio is correctly updated if you replace the image
+- [x] Dragging buttons does not really work when the room is zoomed out
 
 ### Labyrinth
 - [ ] Tooltips persist on mobile after clicking buttons

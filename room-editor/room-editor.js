@@ -516,15 +516,21 @@ function addButton(data) {
 	let dragOffsetX = 0;
 	let dragOffsetY = 0;
 	button.addEventListener("dragstart", (event) => {
-		dragOffsetX = button.offsetLeft - event.clientX;
-		dragOffsetY = button.offsetTop - event.clientY;
+		let buttonRect = button.getBoundingClientRect();
+
+		dragOffsetX = (event.clientX - buttonRect.left)/zoomLevel;
+		dragOffsetY = (event.clientY - buttonRect.top)/zoomLevel;
 		
 		button.labDragging = true;
 	});
 	button.addEventListener("dragover", (event) => {
 		if(button.labDragging) {
-			let newPosX = ((event.clientX + dragOffsetX)/roomWidth) * 100;
-			let newPosY = ((event.clientY + dragOffsetY)/roomHeight) * 100;
+			let roomRect = document.getElementById("room").getBoundingClientRect();
+			let newPosX = (event.clientX - roomRect.left - dragOffsetX)/zoomLevel;
+			let newPosY = (event.clientY - roomRect.top - dragOffsetY)/zoomLevel;
+
+			newPosX = (newPosX/roomWidth) * 100;
+			newPosY = (newPosY/roomHeight) * 100;
 
 			button.style.left = `${newPosX}%`;
 			button.style.top = `${newPosY}%`;

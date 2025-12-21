@@ -6,6 +6,10 @@
 - [ ] Regarding the BDS chat at the meeting, should we move away from github?
 	- [ ] And if so, what alternatives offer easy hosting, automatically
 		  deployed on push?
+- [ ] Add text element, similar to buttons? (**downside:** would move us away
+	  from some of the initial implementation's simplicity; **upside:** would be
+	  better accessibility-wise, as without it, text will have to be rendered as
+	  an image)
 
 ## Immediate
 

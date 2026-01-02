@@ -1,7 +1,7 @@
 {
-	"name": "forest-clearing",
+	"name": "Forest: clearing",
 	"image": "forest-clearing.gif",
-	"imageAltText": "",
+	"imageAltText": "A grassy clearing in the forest, with a single lamppost illuminating a circular patch of grass.",
 	"pixelArt": true,
 	"backgroundColour": "#341936",
 	"author": "Niall Moody",
@@ -104,7 +104,7 @@
 			"imageHover": "grass-lit-2-keys.png",
 			"imageAltText": "",
 			"pixelArt": true,
-			"destination": "",
+			"destination": "room:forest-door-keys",
 			"tooltip": "",
 			"left": "60.16776270833333",
 			"top": "60.598195555555556",

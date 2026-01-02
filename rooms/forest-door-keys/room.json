@@ -1,0 +1,25 @@
+{
+	"name": "Forest: front door",
+	"image": "forest-door-keys.png",
+	"imageAltText": "The front door to a house.",
+	"pixelArt": true,
+	"backgroundColour": "#341936",
+	"author": "Niall Moody",
+	"authorLink": "https://www.niallmoody.com/",
+	"buttons": [
+		{
+			"id": "frontDoor",
+			"image": "door1.png",
+			"imageHover": "door2.png",
+			"imageDown": "door3.png",
+			"imageAltText": "The front door to a house.",
+			"pixelArt": true,
+			"destination": "",
+			"tooltip": "Finally!",
+			"left": "18.857333984375003",
+			"top": "0.9751701388888883",
+			"width": "53.95833333333333",
+			"height": "98.88888888888889"
+		}
+	]
+}

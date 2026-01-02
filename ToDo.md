@@ -14,9 +14,6 @@
 ## Immediate
 
 ### Room Editor
-- [ ] Swap to implementing button images as child `<img>` instead of setting the
-	  backgroundImage property of the `<button>` itself. Would allow us to
-	  actually use the alt text
 - [ ] Switch to mouse move instead of drag for dragging buttons?
 	- [ ] Would skip the glitchy 2nd copy of the image
 	- [ ] Would (I think) also fix the weird drag behaviour on zoom, and when
@@ -28,10 +25,14 @@
 - [ ] Respect user's light mode/dark mode preferences
 - [ ] Update readme to make the process of adding a room a little clearer
 - [ ] Check button aspect ratio is correctly updated if you replace the image
+- [ ] Highlight button in inspector when it's clicked/dragged
 - [x] Fix image drag and drop when zoomed in
 - [x] Dragging buttons does not really work when the room is zoomed out
 
 ### Labyrinth
+- [ ] Swap to implementing button images as child `<img>` instead of setting the
+	  backgroundImage property of the `<button>` itself. Would allow us to
+	  actually use the alt text
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon

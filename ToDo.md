@@ -14,6 +14,9 @@
 ## Immediate
 
 ### Room Editor
+- [ ] Swap to implementing button images as child `<img>` instead of setting the
+	  backgroundImage property of the `<button>` itself. Would allow us to
+	  actually use the alt text
 - [ ] Switch to mouse move instead of drag for dragging buttons?
 	- [ ] Would skip the glitchy 2nd copy of the image
 	- [ ] Would (I think) also fix the weird drag behaviour on zoom, and when
@@ -32,8 +35,8 @@
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon
-- [ ] Draw tooltips above buttons, not interleaved (buttons can currently
-	  overlap other buttons' tooltips)
+- [ ] Draw tooltips above buttons (z-order), not interleaved (buttons can
+	  currently overlap other buttons' tooltips)
 
 ## Longer Term
 

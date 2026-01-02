@@ -1,4 +1,4 @@
-# Biome Gallery 2 ToDo
+# Biome Labyrinth ToDo
 
 ## Questions
 - [ ] What license are we using?

@@ -1,0 +1,10 @@
+{
+	"name": "forest-door",
+	"image": "forest-door.gif",
+	"imageAltText": "The front door to a house, with the text \"wait, where are my keys? must have dropped them in the forest\"",
+	"pixelArt": true,
+	"backgroundColour": "#341936",
+	"author": "Niall Moody",
+	"authorLink": "https://www.niallmoody.com/",
+	"buttons": []
+}

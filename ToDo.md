@@ -36,7 +36,7 @@
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon
-- [ ] Draw tooltips above buttons (z-order), not interleaved (buttons can
+- [x] Draw tooltips above buttons (z-order), not interleaved (buttons can
 	  currently overlap other buttons' tooltips)
 
 ## Longer Term

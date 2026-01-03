@@ -83,7 +83,8 @@ function createButton(room, data) {
 	buttonObj.style.width = `${data.width}%`;
 	buttonObj.style.height = `${data.height}%`;
 
-	room.appendChild(buttonObj);
+	//room.appendChild(buttonObj);
+	document.getElementById("buttons").appendChild(buttonObj);
 
 	//Tooltips are added as an additional div to the room. Can't make them
 	//children of the button as they get cut off by the button's viewport.
@@ -118,7 +119,8 @@ function createButton(room, data) {
 			}
 			tooltip.style.width = `${width}%`;
 
-			room.appendChild(tooltip);
+			//room.appendChild(tooltip);
+			document.getElementById("tooltips").appendChild(tooltip);
 
 			//Show/hide tooltip depending on mouseover.
 			buttonObj.addEventListener("mouseover", () => {
@@ -180,7 +182,7 @@ async function loadRoomData() {
 				roomImg.style.imageRendering = "crisp-edges";
 		});
 
-		room.appendChild(roomImg);
+		document.getElementById("buttons").before(roomImg);
 
 		runIfPresent(roomObj, "backgroundColour", () => {
 			document.body.style.backgroundColor = roomObj.backgroundColour;

@@ -522,6 +522,17 @@ function addButton(data) {
 		dragOffsetY = (event.clientY - buttonRect.top)/zoomLevel;
 		
 		button.labDragging = true;
+
+		//Highlight button in inspector.
+		let inspectorParam = `${button.id}-inspector`;
+
+		for(b of document.getElementById("inspectorButtons").children) {
+			if(b.id != inspectorParam) {
+				if(b.open)
+					b.removeAttribute("open");
+			}
+		}
+		document.getElementById(inspectorParam).open = true;
 	});
 	button.addEventListener("dragover", (event) => {
 		if(button.labDragging) {

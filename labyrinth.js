@@ -15,6 +15,7 @@ function runIfPresent(object, key, code) {
 //------------------------------------------------------------------------------
 function createButton(room, data) {
 	let buttonObj = document.createElement("button");
+	let imageObj = document.createElement("img");
 
 	buttonObj.className = "roomButton";
 
@@ -23,9 +24,10 @@ function createButton(room, data) {
 	});
 
 	runIfPresent(data, "image", () => {
-		buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.image}")`;
-		buttonObj.style.backgroundSize = "100% 100%";
-		buttonObj.style.backgroundPosition = "center";
+		//buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.image}")`;
+		//buttonObj.style.backgroundSize = "100% 100%";
+		//buttonObj.style.backgroundPosition = "center";
+		imageObj.src = `./rooms/${roomId}/${data.image}`;
 	});
 
 	let hasHover = false;
@@ -37,8 +39,8 @@ function createButton(room, data) {
 		let preloadImage = new Image();
 		preloadImage.src = `./rooms/${roomId}/${data.imageHover}`;
 
-		buttonObj.addEventListener("mouseover", () => {
-			buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.imageHover}")`;
+		imageObj.addEventListener("mouseover", () => {
+			imageObj.src = `./rooms/${roomId}/${data.imageHover}`;
 		});
 			
 		hasHover = true;
@@ -50,15 +52,15 @@ function createButton(room, data) {
 		let preloadImage = new Image();
 		preloadImage.src = `./rooms/${roomId}/${data.imageDown}`;
 
-		buttonObj.addEventListener("mousedown", () => {
-			buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.imageDown}")`;
+		imageObj.addEventListener("mousedown", () => {
+			imageObj.src = `./rooms/${roomId}/${data.imageDown}`;
 		});
 
-		buttonObj.addEventListener("mouseup", () => {
+		imageObj.addEventListener("mouseup", () => {
 			if(hasHover)
-				buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.imageHover}")`;
+				imageObj.src = `./rooms/${roomId}/${data.imageHover}`;
 			else
-				buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.image}")`;
+				imageObj.src = `./rooms/${roomId}/${data.image}`;
 		});
 
 		hasDown = true;
@@ -66,16 +68,22 @@ function createButton(room, data) {
 	
 	runIfPresent(data, "image", () => {
 		if(hasHover || hasDown) {
-			buttonObj.addEventListener("mouseout", () => {
-				buttonObj.style.backgroundImage = `url("./rooms/${roomId}/${data.image}")`;
+			imageObj.addEventListener("mouseout", () => {
+				imageObj.src = `./rooms/${roomId}/${data.image}`;
 			});
 		}
 	});
 
+	runIfPresent(data, "imageAltText", () => {
+		imageObj.alt = data.imageAltText;
+	});
+
 	runIfPresent(data, "pixelArt", () => {
 		if(data.pixelArt)
-			buttonObj.style.imageRendering = "crisp-edges";
+			imageObj.style.imageRendering = "crisp-edges";
 	});
+
+	buttonObj.appendChild(imageObj);
 
 	buttonObj.style.position = "absolute";
 	buttonObj.style.top = `${data.top}%`;
@@ -83,7 +91,6 @@ function createButton(room, data) {
 	buttonObj.style.width = `${data.width}%`;
 	buttonObj.style.height = `${data.height}%`;
 
-	//room.appendChild(buttonObj);
 	document.getElementById("buttons").appendChild(buttonObj);
 
 	//Tooltips are added as an additional div to the room. Can't make them
@@ -119,7 +126,6 @@ function createButton(room, data) {
 			}
 			tooltip.style.width = `${width}%`;
 
-			//room.appendChild(tooltip);
 			document.getElementById("tooltips").appendChild(tooltip);
 
 			//Show/hide tooltip depending on mouseover.

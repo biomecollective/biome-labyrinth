@@ -12,7 +12,7 @@
 			"image": "door1.png",
 			"imageHover": "door2.png",
 			"imageDown": "door3.png",
-			"imageAltText": "The front door to a house.",
+			"imageAltText": "The front door to a house, which you can open with your keys.",
 			"pixelArt": true,
 			"destination": "",
 			"tooltip": "Finally!",

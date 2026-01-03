@@ -22,7 +22,7 @@
 	- [ ] Would (I think) also fix the weird drag behaviour on zoom, and when
 		  dragging a button over another
 - [ ] Draggable handles for buttons (scale + rotate)
-    - See [wwwobble.org](https://wwwobble.org/)'s approach for inspiration
+	- See [wwwobble.org](https://wwwobble.org/)'s approach for inspiration
 - [ ] Confirm when leaving page if you've not saved your changes
 - [ ] Respect user's light mode/dark mode preferences
 - [ ] Update readme to make the process of adding a room a little clearer

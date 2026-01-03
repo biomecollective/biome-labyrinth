@@ -1,0 +1,35 @@
+{
+	"name": "What happened to my house!?",
+	"image": "what-happened-to-my-house.gif",
+	"imageAltText": "Six thick jagged lines pointing towards the centre of the room, where a weird red gem is pulsating.",
+	"pixelArt": true,
+	"backgroundColour": "#341936",
+	"author": "Niall Moody",
+	"authorLink": "https://www.niallmoody.com/",
+	"buttons": [
+		{
+			"id": "text",
+			"image": "text.gif",
+			"imageAltText": "The text \"what happened to my house!?\"",
+			"pixelArt": true,
+			"destination": "",
+			"tooltip": "",
+			"left": "15.420138041178385",
+			"top": "7.5",
+			"width": "67.91666666666667",
+			"height": "27.22222222222222"
+		},
+		{
+			"id": "eye",
+			"image": "eye.gif",
+			"imageAltText": "",
+			"pixelArt": true,
+			"destination": "",
+			"tooltip": "",
+			"left": "45.82144534166667",
+			"top": "43.99104",
+			"width": "8.541666666666666",
+			"height": "11.38888888888889"
+		}
+	]
+}

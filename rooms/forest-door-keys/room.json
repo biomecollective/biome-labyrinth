@@ -14,7 +14,7 @@
 			"imageDown": "door3.png",
 			"imageAltText": "The front door to a house, which you can open with your keys.",
 			"pixelArt": true,
-			"destination": "",
+			"destination": "room:what-happened-to-my-house",
 			"tooltip": "Finally!",
 			"left": "18.857333984375003",
 			"top": "0.9751701388888883",

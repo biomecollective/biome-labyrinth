@@ -478,16 +478,28 @@ function addButton(data) {
 	}
 
 	//Update our size relative to the room image.
+	button.initialLoad = true;
 	button.addEventListener("load", function() {
 		button.labRelativeWidth = (this.naturalWidth/roomWidth) * 100;
 		button.labRelativeHeight = (this.naturalHeight/roomHeight) * 100;
 
-		runIfPresent(data, "width", () => {
-			button.labRelativeWidth = data.width;
-		});
-		runIfPresent(data, "height", () => {
-			button.labRelativeHeight = data.height;
-		});
+		if(button.initialLoad) {
+			runIfPresent(data, "width", () => {
+				button.labRelativeWidth = data.width;
+			});
+			runIfPresent(data, "height", () => {
+				button.labRelativeHeight = data.height;
+			});
+		}
+		else {
+			button.style.width = `${button.labRelativeWidth}%`;
+			button.style.height = `${button.labRelativeHeight}%`;
+		}
+
+		//We use this variable to ensure that if the image is changed in future,
+		//its size is reinitialised to its own size, not whatever the current
+		//image's dimensions are.
+		button.initialLoad = false;
 
 		let buttonWidth = document.getElementById(`${button.id}-width`);
 		let buttonHeight = document.getElementById(`${button.id}-height`);

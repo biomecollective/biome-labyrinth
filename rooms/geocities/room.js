@@ -1,23 +1,30 @@
 let starButton = document.getElementById("starButton");
+let starImage = document.querySelector("#starButton > img");
 let planetButton = document.getElementById("planetButton");
+let planetImage = document.querySelector("#planetButton > img");
 
-const stars = [`url("./rooms/geocities/star2.gif")`, `url("./rooms/geocities/star.gif")`];
+const stars = ["./rooms/geocities/star2.gif", "./rooms/geocities/star.gif"];
 let starIndex = 0;
 
 const explosionSound = new Audio("./rooms/geocities/explosion.mp3");
 
-if(starButton) {
+if(starImage) {
 	starButton.addEventListener("click", () => {
 		++starIndex;
 		starIndex %= 2;
 
-		starButton.style.backgroundImage = stars[starIndex];
+		if(starImage) {
+			starImage.src = stars[starIndex];
+		}
 	});
 }
 
 if(planetButton) {
 	planetButton.addEventListener("click", () => {
-		planetButton.style.backgroundImage = `url("./rooms/geocities/explosion.gif")`;
+		if(planetImage) {
+			planetImage.src = "./rooms/geocities/explosion.gif";
+		}
+
 		explosionSound.play();
 	});
 }

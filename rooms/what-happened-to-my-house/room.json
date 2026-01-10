@@ -22,7 +22,7 @@
 		{
 			"id": "eye",
 			"image": "eye.gif",
-			"imageAltText": "",
+			"imageAltText": "A weird, pulsating red eye.",
 			"pixelArt": true,
 			"destination": "",
 			"tooltip": "",

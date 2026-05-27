@@ -1,1 +1,1 @@
-".\Simple Web Server.exe" "./"
+"testing-web-server\Simple Web Server.exe" "./"

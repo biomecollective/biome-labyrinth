@@ -2,7 +2,7 @@
 Inspired by the original
 [Biome Gallery](https://www.niallmoody.com/work/biome-gallery/) but taken in a
 different direction, the Biome Labyrinth will eventually be a sprawling
-collection of rooms create by members of
+collection of rooms created by members of
 [Biome Collective](https://www.biomecollective.com/) that you can explore in
 your browser.
 

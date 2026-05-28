@@ -4,6 +4,7 @@ var draggingId = "";
 var roomWidth = 0;
 var roomHeight = 0;
 var zoomLevel = 1.0;
+var unsavedChanges = false;
 
 //-- Helper functions ----------------------------------------------------------
 //Simplifies some of the room.json loading code.
@@ -294,6 +295,7 @@ function addButtonControls(data) {
 	//Add event listeners.
 	container.querySelector(`#${idBase}-buttonId`).addEventListener("change", () => {
 		document.getElementById(`${idBase}-summary`).innerHTML = document.getElementById(`${idBase}-buttonId`).value;
+		unsavedChanges = true;
 	});
 
 	container.querySelector(`#${idBase}-image`).addEventListener("change", () => {
@@ -302,12 +304,15 @@ function addButtonControls(data) {
 		button.src = `../rooms/${roomId}/${event.target.files[0].name}`;
 
 		document.getElementById(`${idBase}-imageLabel`).innerHTML = event.target.files[0].name;
+		unsavedChanges = true;
 	});
 	container.querySelector(`#${idBase}-imageHover`).addEventListener("change", () => {
 		document.getElementById(`${idBase}-imageHoverLabel`).innerHTML = event.target.files[0].name;
+		unsavedChanges = true;
 	});
 	container.querySelector(`#${idBase}-imageDown`).addEventListener("change", () => {
 		document.getElementById(`${idBase}-imageDownLabel`).innerHTML = event.target.files[0].name;
+		unsavedChanges = true;
 	});
 
 	container.querySelector(`#${idBase}-pixelArt`).addEventListener("change", () => {
@@ -317,29 +322,35 @@ function addButtonControls(data) {
 			button.style.imageRendering = "crisp-edges";
 		else
 			button.style.imageRendering = "auto";
+
+		unsavedChanges = true;
 	});
 
 	container.querySelector(`#${idBase}-left`).addEventListener("change", () => {
 		let button = document.getElementById(idBase);
 
 		button.style.left = `${container.querySelector(`#${idBase}-left`).value}%`;
+		unsavedChanges = true;
 	});
 	container.querySelector(`#${idBase}-top`).addEventListener("change", () => {
 		let button = document.getElementById(idBase);
 
 		button.style.top = `${container.querySelector(`#${idBase}-top`).value}%`;
+		unsavedChanges = true;
 	});
 	container.querySelector(`#${idBase}-width`).addEventListener("change", () => {
 		let button = document.getElementById(idBase);
 		let newWidth = container.querySelector(`#${idBase}-width`).value;
 
 		button.style.width = `${newWidth}%`;
+		unsavedChanges = true;
 	});
 	container.querySelector(`#${idBase}-height`).addEventListener("change", () => {
 		let button = document.getElementById(idBase);
 		let newHeight = container.querySelector(`#${idBase}-height`).value;
 
 		button.style.height = `${newHeight}%`;
+		unsavedChanges = true;
 	});
 
 	container.querySelector(`#${idBase}-resetSize`).addEventListener("click", () => {
@@ -355,12 +366,16 @@ function addButtonControls(data) {
 
 		container.querySelector(`#${idBase}-width`).value = buttonWidth;
 		container.querySelector(`#${idBase}-height`).value = buttonHeight;
+
+		unsavedChanges = true;
 	});
 
 	container.querySelector(`#${idBase}-delete`).addEventListener("click", () => {
 		document.getElementById(idBase).remove();
 
 		container.remove();
+
+		unsavedChanges = true;
 	});
 
 	limitInput(container.querySelector(`#${idBase}-destination`), "^[^\\s]*$");
@@ -619,6 +634,8 @@ function saveRoom() {
 	let roomJson = JSON.stringify(roomObj, null, "\t");
 	let blob = new Blob([roomJson], {type: "text/plain;charset=utf-8"});
 	saveAs(blob, `room.json`);
+
+	unsavedChanges = false;
 }
 
 //-- Initialisation ------------------------------------------------------------
@@ -663,22 +680,27 @@ window.addEventListener("load", () => {
 
 	background.addEventListener("change", (event) => {
 		setBackground(event.target.files[0].name);
+		unsavedChanges = true;
 	});
 
 	pixelArt.addEventListener("change", (event) => {
 		setPixelArt(pixelArt.checked);
+		unsavedChanges = true;
 	});
 
 	backgroundColour.addEventListener("input", event => {
 		document.body.style.backgroundColor = backgroundColour.value;
+		unsavedChanges = true;
 	});
 
 	script.addEventListener("change", (event) => {
 		document.getElementById("scriptLabel").innerHTML = event.target.files[0].name;
+		unsavedChanges = true;
 	});
 
 	addButtonButton.addEventListener("click", (event) => {
 		addButton(null);
+		unsavedChanges = true;
 	});
 
 	saveRoomButton.addEventListener("click", (event) => {
@@ -722,6 +744,7 @@ window.addEventListener("load", () => {
 
 						addButton(data);
 					}
+					unsavedChanges = true;
 				}
 			}
 
@@ -733,6 +756,14 @@ window.addEventListener("load", () => {
 
 		if(fileItems.length > 0) {
 			event.preventDefault();
+		}
+	});
+
+	//Let the user know if they have unsaved changes when leaving the page.
+	window.addEventListener("beforeunload", (event) => {
+		if(unsavedChanges) {
+			event.returnValue = "You have unsaved changes. Are you sure you want to leave the page?";
+			return event.returnValue;
 		}
 	});
 

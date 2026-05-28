@@ -19,11 +19,11 @@
 ### Room Editor
 - [ ] Draggable handles for buttons (scale + rotate)
 	- See [wwwobble.org](https://wwwobble.org/)'s approach for inspiration
-- [ ] Confirm when leaving page if you've not saved your changes
 - [ ] Respect user's light mode/dark mode preferences
 - [ ] Update readme to make the process of adding a room a little clearer
 - [ ] Add eyedropper for background colour
 	- [ ] Eyedropper API not supported on firefox :(
+- [x] Confirm when leaving page if you've not saved your changes
 - [x] Switch to mouse move instead of drag for dragging buttons?
 	- [x] Would skip the glitchy 2nd copy of the image
 	- [x] Would (I think) also fix the weird drag behaviour on zoom, and when

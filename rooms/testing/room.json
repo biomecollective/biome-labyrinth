@@ -31,8 +31,8 @@
 			"pixelArt": true,
 			"destination": "room:lobby",
 			"tooltip": "Back to the lobby!",
-			"left": "77.29166666666667",
-			"top": "54.166666666666664",
+			"left": "77.91666666666667",
+			"top": "53.888888888888886",
 			"width": "24",
 			"height": "48"
 		}

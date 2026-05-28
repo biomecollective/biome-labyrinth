@@ -1,5 +1,6 @@
 var roomId = "";
 var buttonId = 0;
+var draggingId = "";
 var roomWidth = 0;
 var roomHeight = 0;
 var zoomLevel = 1.0;
@@ -43,7 +44,7 @@ function limitInput(inputElement, regexp) {
 //Adds the directory request dialog on page load if we need it.
 function createDirectoryRequester() {
 	let dirRequesterOuter = document.createElement("div");
-	
+
 	dirRequesterOuter.id = "dirRequesterOuter";
 
 	dirRequesterOuter.innerHTML = `
@@ -361,7 +362,7 @@ function addButtonControls(data) {
 
 		container.remove();
 	});
-	
+
 	limitInput(container.querySelector(`#${idBase}-destination`), "^[^\\s]*$");
 	limitInput(container.querySelector(`#${idBase}-left`), "^[0-9.]*$");
 	limitInput(container.querySelector(`#${idBase}-top`), "^[0-9.]*$");
@@ -381,7 +382,7 @@ function setBackground(fileName) {
 	if(backgroundImage.src != "") {
 		updateButtons = true;
 	}
-	
+
 	//We use this to store the size of the room image.
 	backgroundImage.addEventListener("load", function() {
 		let oldWidth = roomWidth;
@@ -397,7 +398,7 @@ function setBackground(fileName) {
 		//image.
 		if(oldWidth == 0)
 			oldAspectRatio = newAspectRatio;
-		
+
 		//If the aspect ratio of the background image has changed, update all
 		//buttons to ensure their aspect ratio stays as it was.
 		if(updateButtons && (newAspectRatio != oldAspectRatio)) {
@@ -409,7 +410,7 @@ function setBackground(fileName) {
 					let origH = button.naturalHeight;
 					let scaledW = button.labRelativeWidth/100.0;
 					let scaledH = button.labRelativeHeight/100.0;
-					
+
 					let newScaleW = (scaledW * oldWidth)/origW;
 					let newScaleH = (scaledH * oldHeight)/origH;
 
@@ -523,17 +524,18 @@ function addButton(data) {
 		});
 	});
 
-	button.labDragging = false;
-
-	let dragOffsetX = 0;
-	let dragOffsetY = 0;
+	//Event listeners to support dragging buttons around.
+	//First, prevent the default image drag behaviour.
 	button.addEventListener("dragstart", (event) => {
-		let buttonRect = button.getBoundingClientRect();
+		event.preventDefault();
+	});
+	//Grab the button's ID on mouse down so we can drag from the roomContainer.
+	button.addEventListener("mousedown", (event) => {
+		draggingId = button.id;
 
-		dragOffsetX = (event.clientX - buttonRect.left)/zoomLevel;
-		dragOffsetY = (event.clientY - buttonRect.top)/zoomLevel;
-		
-		button.labDragging = true;
+		let buttonRect = button.getBoundingClientRect();
+		button.dragOffsetX = (event.clientX - buttonRect.left)/zoomLevel;
+		button.dragOffsetY = (event.clientY - buttonRect.top)/zoomLevel;
 
 		//Highlight button in inspector.
 		let inspectorParam = `${button.id}-inspector`;
@@ -546,26 +548,9 @@ function addButton(data) {
 		}
 		document.getElementById(inspectorParam).open = true;
 	});
-	button.addEventListener("dragover", (event) => {
-		if(button.labDragging) {
-			let roomRect = document.getElementById("room").getBoundingClientRect();
-			let newPosX = (event.clientX - roomRect.left - dragOffsetX)/zoomLevel;
-			let newPosY = (event.clientY - roomRect.top - dragOffsetY)/zoomLevel;
-
-			newPosX = (newPosX/roomWidth) * 100;
-			newPosY = (newPosY/roomHeight) * 100;
-
-			button.style.left = `${newPosX}%`;
-			button.style.top = `${newPosY}%`;
-
-			document.getElementById(`${button.id}-left`).value = `${newPosX}`;
-			document.getElementById(`${button.id}-top`).value = `${newPosY}`;
-
-			event.preventDefault();
-		}
-	});
-	button.addEventListener("dragend", (event) => {
-		button.labDragging = false;
+	//Clear the button's ID so we stop dragging.
+	button.addEventListener("mouseup", (event) => {
+		draggingId = "";
 	});
 
 	room.appendChild(button);
@@ -748,6 +733,27 @@ window.addEventListener("load", () => {
 
 		if(fileItems.length > 0) {
 			event.preventDefault();
+		}
+	});
+
+	//The core of our button dragging code. We don't use the standard drag events
+	//because they insist on showing a transparent copy of the image. This approach
+	//avoids that.
+	document.getElementById("roomContainer").addEventListener("mousemove", (event) => {
+		if(draggingId != "") {
+			let button = document.getElementById(draggingId);
+			let roomRect = document.getElementById("room").getBoundingClientRect();
+			let newPosX = (event.clientX - roomRect.left - button.dragOffsetX)/zoomLevel;
+			let newPosY = (event.clientY - roomRect.top - button.dragOffsetY)/zoomLevel;
+
+			newPosX = (newPosX/roomWidth) * 100;
+			newPosY = (newPosY/roomHeight) * 100;
+
+			button.style.left = `${newPosX}%`;
+			button.style.top = `${newPosY}%`;
+
+			document.getElementById(`${button.id}-left`).value = `${newPosX}`;
+			document.getElementById(`${button.id}-top`).value = `${newPosY}`;
 		}
 	});
 });

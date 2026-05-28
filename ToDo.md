@@ -17,10 +17,6 @@
 ## Immediate
 
 ### Room Editor
-- [ ] Switch to mouse move instead of drag for dragging buttons?
-	- [ ] Would skip the glitchy 2nd copy of the image
-	- [ ] Would (I think) also fix the weird drag behaviour on zoom, and when
-		  dragging a button over another
 - [ ] Draggable handles for buttons (scale + rotate)
 	- See [wwwobble.org](https://wwwobble.org/)'s approach for inspiration
 - [ ] Confirm when leaving page if you've not saved your changes
@@ -28,6 +24,10 @@
 - [ ] Update readme to make the process of adding a room a little clearer
 - [ ] Add eyedropper for background colour
 	- [ ] Eyedropper API not supported on firefox :(
+- [x] Switch to mouse move instead of drag for dragging buttons?
+	- [x] Would skip the glitchy 2nd copy of the image
+	- [x] Would (I think) also fix the weird drag behaviour on zoom, and when
+		  dragging a button over another
 - [x] Check button aspect ratio is correctly updated if you replace the image
 - [x] Highlight button in inspector when it's clicked/dragged
 - [x] Fix image drag and drop when zoomed in

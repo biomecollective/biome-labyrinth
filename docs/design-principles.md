@@ -57,7 +57,10 @@ With the caveat that such custom functionality is essentially siloed to that
 room, to avoid adding complexity to the core Labyrinth implementation.
 
 ## Accesible
+TBD
 
+## Responsive
+TBD
 
 ---
 

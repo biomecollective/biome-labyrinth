@@ -1,4 +1,4 @@
-# biome labyrinth docs
+# Biome Labyrinth Documentation
 A detailed guide to the
 [biome labyrinth](https://biomecollective.github.io/biome-labyrinth/) for
 anyone who wants to add to it or work on it.

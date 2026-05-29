@@ -56,11 +56,22 @@ individual room authors to add functionality to their rooms with Javascript.
 With the caveat that such custom functionality is essentially siloed to that
 room, to avoid adding complexity to the core Labyrinth implementation.
 
-## Accesible
-TBD
+## Accessible
+While the Labyrinth is oriented towards images, it aims to be as accessible as
+possible, and support screen readers via alt text and ARIA descriptors where
+relevant. Pages are rendered as HTML using standard elements (`div`, `button`,
+and `img`) and - unless a room author has done something unusual - are all
+navigable by keyboard.
+
+There is probably more we can do in this area.
 
 ## Responsive
-TBD
+It's always a little sad when you go to check out a cool web page on your phone
+and you find yourself having to constantly zoom and scroll to take the whole
+thing in. The Biome Labyrinth aims to work just as well on mobile as on desktop.
+
+At the time of writing the main stylesheet ([style.css](../style.css))
+represents a first pass on a responsive design; it could probably be improved.
 
 ---
 

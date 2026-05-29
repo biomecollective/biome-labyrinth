@@ -4,7 +4,7 @@ In some ways the Biome Labyrinth is the successor of the original
 ways it is attempting to solve a slightly different set of problems. The
 labyrinth is not intended to be a shared online space with individual avatars,
 but something closer to a collaborative community art project (to be fair, the
-Biome Gallery was also a collaborative community art project, it was just *also*
+Biome Gallery *was* a collaborative community art project, it was just *also*
 a mini MMO).
 
 This page lays out the core design principles behind the Biome Labyrinth

@@ -15,14 +15,14 @@ but are not familiar with Git, talk to Niall for an intro.
 As the Biome Labyrinth is essentially a static site, before you can add a room
 you will need to obtain a copy of the current site. At the time of writing the
 Labyrinth is hosted on GitHub; you can obtain a copy of it by cloning the
-repository at [https://github.com/biomecollective/biome-labyrinth/](https://github.com/biomecollective/biome-labyrinth/).
+repository at [https://github.com/biomecollective/biome-labyrinth/](https://github.com/biomecollective/biome-labyrinth/)
 
 <details>
-<summary>What does <emphasis>"cloning the repository"</emphasis> mean?</summary>
+<summary>Terminology: What does "cloning the repository" mean?</summary>
 
-*"Cloning the repository"* is Git terminology for obtaining a full copy of the
+**"Cloning the repository"** is Git terminology for obtaining a full copy of the
 project, with a full history of all of the changes and additions over the course
-of the project's lifespan. Once you have cloned a repository you modify its
+of the project's lifespan. Once you have cloned a repository you can modify its
 contents, add to them, and push any changes back to the server so that everyone
 working on the project can obtain the changes you have made and add them to
 their copies of the project.
@@ -35,10 +35,27 @@ to have some recommendations here.**
 </details>
 
 ## Room preparation
-TEXT
+Now that you have your own copy of the Labyrinth you can start adding rooms to
+it. The first step is to gather any images you want to use for it and create a
+folder for the room.
 
-1. Create the directory
-2. Create or gather your images
+Rooms in the Biome Labyrinth consist of the following elements:
+
+- A folder in the `rooms` directory of the repository.
+- A background image (jpg, png, gif, or any format your web browser can display).
+- Images for any buttons in the room (again, any format your web browser can display).
+	- Note that buttons can have up to 3 images: a regular image, an image displayed when the mouse is hovering over it, and an image for when the button is clicked/held down.
+- A `room.json` file. This tells the Labyrinth how render the room and where to place the buttons etc. `room.json` will be created by the room editor; see
+[Creating a room](#creating-a-room) below.
+- (optional) A javascript file for any custom scripting you want to do in the room.
+
+So there are two main steps at this stage:
+
+1. Create a folder for the room in the `rooms` directory. Note that the folder name will make up part of the URL used to navigate to the room in a web browser (e.g. a room called `example` would have a URL `https://biomecollective.github.io/biome-labyrinth/?room=example`). As such, it will need to be lowercase and have no spaces (e.g. `Example Room` would have to be written `example-room`).
+2. Gather any images you want to use, and put them in the folder you've created.
+
+You should end up with something a bit like this:
+![Screenshot of a simple room folder, consisting of a background image and 3 button images; a regular state, a hover state, and a down state](images/basic-room-contents.png)
 
 ## Running the test server
 TEXT

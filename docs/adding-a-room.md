@@ -58,7 +58,7 @@ Rooms in the Biome Labyrinth consist of the following elements:
 
 1. Create a folder for the room in the `rooms` directory. Note that the folder name will make up part of the URL used to navigate to the room in a web browser.  
 So a room called `example` would have a URL `https://biomecollective.github.io/biome-labyrinth/?room=example`.  
-As such, it will need to be lowercase and have no spaces (e.g. `Example Room` would have to be written `example-room`).
+**Note:** this means the folder name will need to be lowercase and have no spaces (e.g. `Example Room` would have to be written `example-room`).
 2. Gather any images you want to use, and put them in the folder you've created.
 
 You should end up with something a bit like this:

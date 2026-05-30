@@ -65,7 +65,19 @@ You should end up with something a bit like this:
 ![Screenshot of a simple room folder, consisting of a background image and 3 button images; a regular state, a hover state, and a down state](images/basic-room-contents.png)
 
 ## Running the test server
-TEXT
+In order to edit your room and test that it's working as intended, you will
+need to serve the labyrinth pages from a web server running on your own
+machine. If you're on Windows or Linux there is a simple web server included in the repository for this purpose.
+
+- To run the server on **Windows**, double-click the `WebServer.bat` file.
+- To run the server on **Linux**, run the `WebServer.sh` script.
+- If you're on **OSX** you will need to obtain a web server app yourself, and
+tell it to serve files from the `biome-labyrinth` folder.
+
+Once running, you can view the labyrinth in your web browser at
+[http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+TODO: Finish this section.
 
 ## Creating the room
 TEXT

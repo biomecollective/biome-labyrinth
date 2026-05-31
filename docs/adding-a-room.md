@@ -84,10 +84,17 @@ When you're done you can stop the server by navigating to
 of your rooms. Please don't use it to serve websites publicly on the internet.
 
 ## Creating the room
-TEXT
+You're now ready to create your room. This section will cover the basics, but
+will not go into detail on more advanced topics like scripting. See the
+[Room scripting](room-scripting.md) page for more info on scripting in the
+Biome labyrinth.
 
-1. Open the room editor
-2. Select your room directory
+### Steps
+
+1. **Open the room editor.** Navigate to [http://127.0.0.1:8000/room-editor](http://127.0.0.1:8000/room-editor) to open the room editor  
+**Note:** After you've created a room you can navigate directly to it using `http://127.0.0.1:8000/room-editor?room=<room name>`.
+2. **Select your room directory.** When you first open the room editor you should see the following dialog. Click the **Select Directory** button and select the folder you created for your room in the `rooms` directory.  
+![Dialog asking the user to select a directory for the room they are going to create](images/select-directory.png)
 3. Drag in your background image
 4. Edit main room settings
 5. Drag in your first button image

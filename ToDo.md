@@ -6,6 +6,10 @@
 - [ ] Regarding the BDS chat at the meeting, should we move away from github?
 	- [ ] And if so, what alternatives offer easy hosting, automatically
 		  deployed on push?
+		- [Codeberg?](https://codeberg.org/)
+- [ ] Should the code for the testing web server be included in the repository?
+- [ ] Do we want to add visible room credits? (the data's already there)
+- [ ] Should rooms be added via pull requests or are we happy to give any interested Biome members write access to the repo?
 - [ ] Add text element, similar to buttons?
 	- **Downside:** Would move us away from some of the initial implementation's
 	  simplicity
@@ -13,8 +17,6 @@
 	  have to be rendered as an image
 	- Would probably want to move to the Outliner + Inspector approach proposed
 	  below to support this
-- [ ] Should the code for the testing web server be included in the repository?
-- [ ] Do we want to add visible room credits? (the data's already there)
 
 ## Immediate
 

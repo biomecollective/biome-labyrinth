@@ -91,10 +91,13 @@ Biome labyrinth.
 
 ### Steps
 
-1. **Open the room editor.** Navigate to [http://127.0.0.1:8000/room-editor](http://127.0.0.1:8000/room-editor) to open the room editor  
+1. **Open the room editor.** Navigate to [http://127.0.0.1:8000/room-editor](http://127.0.0.1:8000/room-editor) to open the room editor.  
 **Note:** After you've created a room you can navigate directly to it using `http://127.0.0.1:8000/room-editor?room=<room name>`.
 2. **Select your room directory.** When you first open the room editor you should see the following dialog. Click the **Select Directory** button and select the folder you created for your room in the `rooms` directory.  
 ![Dialog asking the user to select a directory for the room they are going to create](images/select-directory.png)
+**Note:** Your browser will probably pop up a dialog asking if you want to upload all the files in the directory you've selected. If it does, say yes. This
+will not actually upload any files to the server, but is necessary for the room
+editor to see the image files you have placed in the directory.
 3. Drag in your background image
 4. Edit main room settings
 5. Drag in your first button image

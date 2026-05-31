@@ -40,7 +40,7 @@ it. Before you can create the room itself you will need to gather any images you
 
 <details>
 
-<summary>What makes up a room in the Labyrinth?</summary>
+<summary>Info: What makes up a room in the Labyrinth?</summary>
 
 Rooms in the Biome Labyrinth consist of the following elements:
 
@@ -77,7 +77,11 @@ tell it to serve files from the `biome-labyrinth` folder.
 Once running, you can view the labyrinth in your web browser at
 [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-TODO: Finish this section.
+When you're done you can stop the server by navigating to
+[http://127.0.0.1:8000/stop](http://127.0.0.1:8000/stop).
+
+**Note:** The included server is very simple and only intended for local testing
+of your rooms. Please don't use it to serve websites publicly on the internet.
 
 ## Creating the room
 TEXT

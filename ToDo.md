@@ -14,6 +14,7 @@
 	- Would probably want to move to the Outliner + Inspector approach proposed
 	  below to support this
 - [ ] Should the code for the testing web server be included in the repository?
+- [ ] Do we want to add visible room credits? (the data's already there)
 
 ## Immediate
 

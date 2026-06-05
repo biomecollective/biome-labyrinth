@@ -100,10 +100,10 @@ Biome labyrinth.
 will not actually upload any files to the server, but is necessary for the room
 editor to see the image files you have placed in the directory.
 3. **Drag in your background image.** With your room folder open in a separate window, drag your background image onto the room editor, like so:
-![A window showing the contents of an 'example' room folder, with a 'background.png' file selected, and an arrow indicating it should be dragged into the room editor in a browser window behind it.](images/add-background-image.png)
+![A window showing the contents of an 'example' room folder, with a 'background.png' file selected, and an arrow indicating it should be dragged into the room editor in a browser window behind it.](images/add-background-image.png) 
 The first image you drag into the room editor will always be set as the room's background image.
 4. **Edit main room settings.** You can now edit the main room settings. By default the `Room Name` entry will be set to the name of your room's folder, but
-you can change that to be a more meaningful name. Note particularly the `Alt Text` box; please use this to add alt text for the background image. If you have uploaded a pixel art image, you will want to check the `Pixel Art` box so your image doesn't get blurry when scaled.
+you can change that to be a more meaningful name. Note particularly the `Alt Text` box; please use this to add alt text for the background image. If you have uploaded a pixel art image, you will want to check the `Pixel Art` box so your image doesn't get blurry when scaled. 
 ![The main room settings for an example room, with filled-out alt text, the pixel art box checked, a custom page colour, and the Author and Author Link text boxes filled in.](images/edit-room-settings.png)
 5. Drag in your first button image
 6. Edit your button settings

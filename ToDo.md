@@ -10,6 +10,7 @@
 - [ ] Should the code for the testing web server be included in the repository?
 - [ ] Do we want to add visible room credits? (the data's already there)
 - [ ] Should rooms be added via pull requests or are we happy to give any interested Biome members write access to the repo?
+- [ ] What's a good Git UI to recommend to community members not familiar with Git?
 - [ ] Add text element, similar to buttons?
 	- **Downside:** Would move us away from some of the initial implementation's
 	  simplicity

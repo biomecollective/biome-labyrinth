@@ -1,9 +1,9 @@
 # Adding a room to the labyrinth
 Adding a room to the Biome Labyrinth is fairly straightforward, but does involve
-a few more steps than a more complex system like WordPress. And because we
-currently rely on GitHub for hosting, the following steps do assume you're
-familiar with [Git](https://git-scm.com/). If you'd like to contribute a room
-but are not familiar with Git, talk to Niall for an intro.
+a few more steps than a more technically complex system like WordPress. And
+because we currently rely on GitHub for hosting, the following steps do assume
+you're familiar with [Git](https://git-scm.com/). If you'd like to contribute a
+room but are not familiar with Git, talk to Niall for an intro.
 
 - [Prerequisites](#prerequisites)
 - [Room preparation](#room-preparation)
@@ -48,6 +48,7 @@ Rooms in the Biome Labyrinth consist of the following elements:
 - A **background image** (jpg, png, gif, or any format your web browser can display).
 - **Images for any buttons** in the room (again, any format your web browser can display).
 	- Note that buttons can have up to 3 images: a regular image, an image displayed when the mouse is hovering over it, and an image for when the button is clicked/held down.
+	- The first image is mandatory; the second two are optional.
 - A **room.json file**. This tells the Labyrinth how render the room and where to place the buttons etc. `room.json` will be created by the room editor; see
 [Creating a room](#creating-a-room) below.
 - (optional) A **javascript file** for any custom scripting you want to do in the room.
@@ -98,10 +99,12 @@ Biome labyrinth.
 **Note:** Your browser will probably pop up a dialog asking if you want to upload all the files in the directory you've selected. If it does, say yes. This
 will not actually upload any files to the server, but is necessary for the room
 editor to see the image files you have placed in the directory.
-3. Drag in your background image
+3. **Drag in your background image.** With your room folder open in a separate window, drag your background image onto the room editor, like so:
+![A window showing the contents of an 'example' room folder, with a 'background.png' file selected, and an arrow indicating it should be dragged into the room editor in a browser window behind it.](images/add-background-image.png)
 4. Edit main room settings
 5. Drag in your first button image
 6. Edit your button settings
+7. Testing your room
 
 ## Making your room public
 TEXT

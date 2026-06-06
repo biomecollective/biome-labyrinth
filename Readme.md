@@ -1,18 +1,26 @@
 # The Biome Labyrinth
-Inspired by the original
-[Biome Gallery](https://www.niallmoody.com/work/biome-gallery/) but taken in a
-different direction, the Biome Labyrinth will eventually be a sprawling
-collection of rooms created by members of
-[Biome Collective](https://www.biomecollective.com/) that you can explore in
-your browser.
+The [Biome Labyrinth](https://biomecollective.github.io/biome-labyrinth/) is a
+virtual space made up of a sprawling collection of interconnected rooms,
+navigable via a web browser. It is designed to be technically simple, easy to
+archive in the event of hosting issues, and easy to add rooms to.
+
+The Biome Labyrinth is inspired by the original
+[Biome Gallery](https://www.niallmoody.com/work/biome-gallery/), but where the
+Biome Gallery was essentially a collaborative community art work crossed with a
+mini MMO, the Biome Labyrinth strips out the MMO elements in favour of a more
+straightforward, easier-to-maintain design.
 
 If you are a member of Biome Collective and would like to add a room to the
-labyrinth, contact Niall on discord or slack.
+labyrinth, contact Niall on discord.
 
 If you want to create your own labyrinth using this code, just clone the
 repository and delete the contents of the `rooms` folder.
 
-# Adding a Room to the Labyrinth
+There's a quick intro explaining how to add a room to the labyrinth below. For
+more detailed information about how to use/add to the labyrinth, see the
+[docs](docs/Readme.md).
+
+# Quick intro: Adding a Room to the Labyrinth
 **Note:** The following instructions assume you have some familiarity with
 					[Git](https://git-scm.com/) and [GitHub](https://github.com/). If
 					you've not used Git before, talk to Niall for an intro.
@@ -41,23 +49,14 @@ used as buttons to navigate to other rooms, or any web URL.
    repository. The website should update automatically after a few moments.
 
 # Design Principles
-The core principles Niall worked to when initially designing the code for the
-labyrinth:
+The core principles behind the technical design of the Biome Labyrinth are as
+follows. The Biome Labyrinth is intended to be:
 
-- The labyrinth is a collection of rooms with buttons (doors?) for navigating
-  between rooms.
-- Keep things simple. The core functionality should be as simple as possible. If
-  additional functionality is needed, it can be added on a per-room basis by
-  individual room authors (via the room script).
-- The labyrinth should be easily archive-able.
-- No server-side code; everything runs client-side. This simplifies the
-  programming and makes it easier to archive the entire labyrinth.
-	- Related: the labyrinth should consist entirely of static files.
-- The labyrinth should follow responsive design principles and work equally on
-  desktop and mobile. To aid this, all room object coordinates and sizes should
-  be percentages relative to the size of the background image.
-- The labyrinth should be accessible via screen reader. Alt text and ARIA
-  descriptors should be used wherever appropriate.
-	- Related: all labyrinth elements should be standard HTML elements to
-	  ensure screen readers understand them and that they can be navigated via
-	  keyboard (tab).
+- [Technically simple](docs/design-principles.md#technically-simple)
+- [Easily archivable](docs/design-principles.md#easily-archivable)
+- [Extensible](docs/design-principles.md#extensible)
+- [Accessible](docs/design-principles.md#accessible)
+- [Responsive](docs/design-principles.md#responsive)
+
+For a more detailed explanation, see the
+[Design Principles](docs/design-principles.md) document.

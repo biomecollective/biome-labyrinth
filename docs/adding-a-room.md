@@ -117,10 +117,10 @@ See the [Room settings reference](room-settings-reference.md#button-settings) fo
 ## Making your room public
 At this point you should have a working room set up the way you want it, but it
 will only be visible on your own machine. In order to make your room publicly
-visible on the internet you will need to **1.)** Add any new files you've
+visible on the internet you will need to **1.)** **Add** any new files you've
 created  to the Git repository (this should be the entire contents of the room
-folder you've created, **2.)** **commit** your changes via your Git client, and
-**3.)** **push** those changes to our GitHub repository. We're using GitHub
+folder you've created, **2.)** **Commit** your changes via your Git client, and
+**3.)** **Push** those changes to our GitHub repository. We're using GitHub
 Pages, so GitHub will automatically update the public site after you've pushed
 your changes. After a minute or two you should be able to view your room at:  
 `https://biomecollective.github.io/biome-labyrinth/?room=<room name>`.

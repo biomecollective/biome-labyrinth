@@ -39,6 +39,7 @@
 - [x] Dragging buttons does not really work when the room is zoomed out
 
 ### Labyrinth
+- [ ] Display room author and author link in console on page load.
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon

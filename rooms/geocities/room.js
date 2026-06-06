@@ -8,7 +8,7 @@ let starIndex = 0;
 
 const explosionSound = new Audio("./rooms/geocities/explosion.mp3");
 
-if(starImage) {
+if(starButton) {
 	starButton.addEventListener("click", () => {
 		++starIndex;
 		starIndex %= 2;

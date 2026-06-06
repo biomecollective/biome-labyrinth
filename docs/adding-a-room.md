@@ -133,29 +133,31 @@ any new changes from GitHub before you can **push** your own changes.
 <details>
 <summary>Terminology: What does "commit your changes" mean?</summary>
 
-**"Commit your changes"** is Git terminology; it essentially means "tell our
+**"Commit your changes"** is Git terminology; it essentially means *"tell our
 version control system (this is Git) about the changes you have made, so that it
-has a reference to what has changed, and when it changed." It's good practice to
-commit your changes on a regular basis, so that if you accidentally break
-something in your room or want to undo it, you can use Git to go back to an
-earlier version.
+has a reference to what has changed, and when it changed."* Note that this only
+updates your personal copy of the labyrinth.
+
+It's good practice to commit your changes on a regular basis, so that if you
+accidentally break something in your room or want to undo it, you can use Git
+to go back to an earlier version.
 </details>
 
 <details>
 <summary>Terminology: What does "push your changes" mean?</summary>
 
-**"Push your changes"** is more Git terminology. It essentially means "update
-our remote Git repository (which resides on GitHub) with your personal changes."
-This means that everyone working on the project can see your changes, and the
-public-facing website will update with your new room.
+**"Push your changes"** is more Git terminology. It essentially means *"update
+our remote Git repository (which resides on GitHub) with your personal
+changes."* This means that everyone working on the project can see your
+changes, and the public-facing website will update with your new room.
 </details>
 
 <details>
 <summary>Terminology: What does "pull new changes" mean?</summary>
 
-**"Pull new changes"** is more Git terminology. It essentially means "update
+**"Pull new changes"** is more Git terminology. It essentially means *"update
 your local copy of the labyrinth with any new changes that other people have
-made." As long as you are only working on your own room this should be a fairly
+made."* As long as you are only working on your own room this should be a fairly
 seamless operation; if you are working on the same files as someone else you
 may find that you need to manually resolve conflicts between your version and
 the other person's version.

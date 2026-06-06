@@ -25,9 +25,9 @@
 - [ ] Draggable handles for buttons (scale + rotate)
 	- See [wwwobble.org](https://wwwobble.org/)'s approach for inspiration
 - [ ] Respect user's light mode/dark mode preferences
-- [ ] Update readme to make the process of adding a room a little clearer
 - [ ] Add eyedropper for background colour
 	- [ ] Eyedropper API not supported on firefox :(
+- [x] Update readme to make the process of adding a room a little clearer
 - [x] Confirm when leaving page if you've not saved your changes
 - [x] Switch to mouse move instead of drag for dragging buttons?
 	- [x] Would skip the glitchy 2nd copy of the image

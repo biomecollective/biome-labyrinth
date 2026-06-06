@@ -1,5 +1,10 @@
 # Biome Labyrinth Room Scripting
 
+- [Introduction](#introduction)
+- [Snippets](#snippets)
+	- [Change button image](#change-button-image)
+	- [Play sound when button is clicked](#play-sound-when-button-is-clicked)
+
 ## Introduction
 To add custom scripting to a room, create a javascript file (e.g. `room.js`) in
 the room's folder, and set the room's `Script` to point to that file in the
@@ -48,6 +53,11 @@ if(starButton) {
 
 ### Play sound when button is clicked
 The following code plays a sound when the button is clicked.
+
+**Important note:** If the button is set up to link to another page the sound
+will be cut off almost immediately, as the new page will load straight away. The
+following code assumes the button is implemented in the room editor with no
+destination.
 
 ```javascript
 //Get a reference to the button we're going to attach our sound to.

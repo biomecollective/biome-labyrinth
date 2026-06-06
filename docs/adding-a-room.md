@@ -134,9 +134,9 @@ any new changes from GitHub before you can **push** your own changes.
 <summary>Terminology: What does "commit your changes" mean?</summary>
 
 **"Commit your changes"** is Git terminology; it essentially means *"tell our
-version control system (this is Git) about the changes you have made, so that it
-has a reference to what has changed, and when it changed."* Note that this only
-updates your personal copy of the labyrinth.
+version control system* (this is Git) *about the changes you have made, so that
+it has a reference to what has changed, and when it changed."* Note that this
+only updates your personal copy of the labyrinth.
 
 It's good practice to commit your changes on a regular basis, so that if you
 accidentally break something in your room or want to undo it, you can use Git
@@ -147,7 +147,7 @@ to go back to an earlier version.
 <summary>Terminology: What does "push your changes" mean?</summary>
 
 **"Push your changes"** is more Git terminology. It essentially means *"update
-our remote Git repository (which resides on GitHub) with your personal
+our remote Git repository* (which resides on GitHub) *with your personal
 changes."* This means that everyone working on the project can see your
 changes, and the public-facing website will update with your new room.
 </details>

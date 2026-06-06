@@ -105,9 +105,10 @@ The first image you drag into the room editor will always be set as the room's b
 4. **Edit main room settings.** You can now edit the main room settings. By default the `Room Name` entry will be set to the name of your room's folder, but
 you can change that to be a more meaningful name. Note particularly the `Alt Text` box; please use this to add alt text for the background image. If you have uploaded a pixel art image, you will want to check the `Pixel Art` box so your image doesn't get blurry when scaled.  
 ![The main room settings for an example room, with filled-out alt text, the pixel art box checked, a custom page colour, and the Author and Author Link text boxes filled in.](images/edit-room-settings.png)
-5. **Drag in your first button image.** To add a button to the room, simply drag the image you want to use into the room editor (after the room has a background image, any future images dropped in the editor will automatically be used to automatically create a button).  
+5. **Drag in your first button image.** To add a button to the room, simply drag the image you want to use into the room editor (after the room has a background image, any future images dropped in the editor will automatically be used to create a button).  
 ![A window showing the contents of an 'example' room folder, with a 'button.png' file selected, and an arrow indicating it should be dragged into the room editor in a browser window behind it.](images/add-button.png)
-6. Edit your button settings
+6. **Edit your button settings.** You can now fine-tune the position of the button by dragging, and set the button's various settings in the panel on the right. The most important setting is probably the `Destination`; this can either be a standard URL (e.g. [https://www.biomecollective.com/](https://www.biomecollective.com/)), or it can link to another room in the labyrinth. To link to a room, enter `room:` followed by the folder name of the room. The button in the example below links to the `hallway` room, for instance.  
+![A button named enterButton is highlighted, with its settings visible in a pane on the left. The Destination setting is set to room:hallway](images/edit-button-settings.png)
 7. Testing your room
 
 ## Making your room public

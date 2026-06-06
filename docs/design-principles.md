@@ -39,11 +39,11 @@ edit text files or write any code.
 
 ## Easily archivable
 The Biome Labyrinth is gone. We saved the code and assets, but it was tightly
-tied to our glitch.com hosting service, and it would be a huge amount of work to
-resurrect it to allow it to live on as an active archive. One of the core goals
-of the Biome Labyrinth is to ensure it never ends up in a similar situation. If
-our current hosting goes away it should be trivial to move it to a new host and
-keep it as an archive of the community's work.
+tied to our glitch.com hosting service (now shut down), and it would be a huge
+amount of work to resurrect it to allow it to live on as an active archive. One
+of the core goals of the Biome Labyrinth is to ensure it never ends up in a
+similar situation. If our current hosting goes away it should be trivial to
+move it to a new host and keep it as an archive of the community's work.
 
 This is another one of the reasons that the Labyrinth is designed as a static
 site, relying on just standard HTML, CSS, and Javascript.
@@ -53,15 +53,15 @@ While the core Labyrinth code is designed to be as simple as possible, Biome is
 full of very talented people, and there's a lot of fun things you can do with
 Javascript and a modern web browser. As such, the Labyrinth is designed to allow
 individual room authors to add functionality to their rooms with Javascript.
-With the caveat that such custom functionality is essentially siloed to that
-room, to avoid adding complexity to the core Labyrinth implementation.
+Albeit with the caveat that such custom functionality is essentially siloed to
+that room, to avoid adding complexity to the core Labyrinth implementation.
 
 ## Accessible
 While the Labyrinth is oriented towards images, it aims to be as accessible as
-possible, and support screen readers via alt text and ARIA descriptors where
-relevant. Pages are rendered as HTML using standard elements (`div`, `button`,
-and `img`) and - unless a room author has done something unusual - are all
-navigable by keyboard.
+possible, and should support screen readers via alt text and ARIA descriptors
+where relevant. Pages are rendered as HTML using standard elements (`div`,
+`button`, and `img`) and - unless a room author has done something unusual -
+are all navigable by keyboard.
 
 There is probably more we can do in this area.
 

@@ -26,7 +26,7 @@ format supported by modern web browsers (jpg, png, gif, etc.).
 
 ## Custom javascript
 A room may optionally included a javascript (.js) file to run custom code (e.g.
-play sounds when buttons are pressed, etc.). This should be loaded after the
+play sounds when buttons are pressed, etc.). This should get loaded after the
 rest of the room has loaded.
 
 ## Room data

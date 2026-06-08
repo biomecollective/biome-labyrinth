@@ -7,6 +7,8 @@ anyone who wants to add to it or work on it.
   new room to the labyrinth.
 - [Room settings reference:](room-settings-reference.md) A detailed explanation
   of each room and button setting available when editing a room.
+- [The anatomy of a room:](anatomy-of-a-room.md) Rooms are just a folder with a
+  collection of files; this document explains what those files are.
 - [Room scripting:](room-scripting.md) An introduction to the scripting
   possibilities for labyrinth rooms, with examples.
 - [Design principles:](design-principles.md) The design principles the Labyrinth

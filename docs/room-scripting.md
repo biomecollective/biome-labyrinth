@@ -4,6 +4,7 @@
 - [Snippets](#snippets)
 	- [Change button image](#change-button-image)
 	- [Play sound when button is clicked](#play-sound-when-button-is-clicked)
+	- [Animate button position](#animate-button-position)
 
 ## Introduction
 To add custom scripting to a room, create a javascript file (e.g. `room.js`) in
@@ -20,9 +21,13 @@ easier to reference from the room script.
 **TODO:** Is there more to say here?
 
 ## Snippets
+The following snippets are all taken from the
+[geocities](https://biomecollective.github.io/biome-labyrinth/?room=geocities)
+room, with additional comments explaining what the code is doing.
 
 ### Change button image
 The following code toggles between two button images when the button is clicked.
+
 ```javascript
 //Get references to the two page elements we are going to operate on: the button//itself, and the button's image.
 let starButton = document.getElementById("starButton");
@@ -75,6 +80,45 @@ if(planetButton) {
 	planetButton.addEventListener("click", () => {
 		//Play our sound.
 		explosionSound.play();
+	});
+}
+```
+
+### Animate button position
+The following code implements a very simple left-right tweening animation for
+its button when it is clicked.
+
+```javascript
+//Get a reference to the button that we're going to move when it is clicked.
+let ufo = document.getElementById("ufo");
+
+//Double-check our ufo button exists before we operate on it.
+if(ufo) {
+	//This line ensures that when we assign the button a new position, it animates
+	//towards that position, rather than jumping to it directly. The `2s` string
+	//tells the browser to animate it to its new position over the course of
+	//2 seconds.
+	//
+	//For more information about the transition property, see the MDN docs:
+	//https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition
+	ufo.style.transition = `2s`;
+
+	//Add an event listener to the ufo button, to run our code when the button
+	//is clicked.
+	ufo.addEventListener("click", () => {
+		//Get the current x-axis position of the ufo.
+		let ufoLeft = ufo.style.left;
+
+		//If the ufo is to the left of the screen, update its position to be on the
+		//right, otherwise update its position to be on the left.
+		//
+		//Note: when working with positions in the Biome Labyrinth, it's important
+		//      to always use percentage positions. This ensures the page stays
+		//      responsive to different resolutions and aspect ratios.
+		if(ufoLeft == `15%`)
+			ufo.style.left = `75%`;
+		else
+			ufo.style.left = `15%`;
 	});
 }
 ```

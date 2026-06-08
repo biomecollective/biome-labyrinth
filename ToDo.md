@@ -39,6 +39,7 @@
 - [x] Dragging buttons does not really work when the room is zoomed out
 
 ### Labyrinth
+- [ ] Add room demonstrating tweening animation of buttons using custom css.
 - [ ] Display room author and author link in console on page load.
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector

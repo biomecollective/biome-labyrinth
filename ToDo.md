@@ -9,8 +9,10 @@
 		- [Codeberg?](https://codeberg.org/)
 - [ ] Should the code for the testing web server be included in the repository?
 - [ ] Do we want to add visible room credits? (the data's already there)
-- [ ] Should rooms be added via pull requests or are we happy to give any interested Biome members write access to the repo?
-- [ ] What's a good Git UI to recommend to community members not familiar with Git?
+- [ ] Should rooms be added via pull requests or are we happy to give any
+			interested Biome members write access to the repo?
+- [ ] What's a good Git UI to recommend to community members not familiar with
+			Git?
 - [ ] Add text element, similar to buttons?
 	- **Downside:** Would move us away from some of the initial implementation's
 	  simplicity
@@ -39,14 +41,15 @@
 - [x] Dragging buttons does not really work when the room is zoomed out
 
 ### Labyrinth
-- [ ] Add room demonstrating tweening animation of buttons using custom css.
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon
+- [X] Add example demonstrating tweening animation of buttons (in the geocities
+			room).
 - [x] Display room author and author link in console on page load.
 - [x] Swap to implementing button images as child `<img>` instead of setting the
-	  backgroundImage property of the `<button>` itself. Would allow us to
-	  actually use the alt text
+	  	backgroundImage property of the `<button>` itself. Would allow us to
+	  	actually use the alt text
 - [x] Draw tooltips above buttons (z-order), not interleaved (buttons can
 	  currently overlap other buttons' tooltips)
 

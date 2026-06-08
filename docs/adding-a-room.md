@@ -53,6 +53,8 @@ Rooms in the Biome Labyrinth consist of the following elements:
 [Creating a room](#creating-a-room) below.
 - (optional) A **javascript file** for any custom scripting you want to do in the room.
 
+See [The anatomy of a room](anatomy-of-a-room.md) for more details.
+
 </details>
 
 ### Steps

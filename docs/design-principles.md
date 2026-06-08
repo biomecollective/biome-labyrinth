@@ -32,6 +32,9 @@ json data and images, laid out with some
 to set up a custom server (e.g. using Node.js), and the entire Labyrinth can be
 served from a standard web server.
 
+See [The anatomy of a room](anatomy-of-a-room.md) document for more details on
+what constitutes a room.
+
 The most complex code in the project is reserved for the
 [room editor](https://biomecollective.github.io/biome-labyrinth/room-editor), which is intentionally designed to allow
 non-technical community members to add rooms to the Labyrinth without needing to

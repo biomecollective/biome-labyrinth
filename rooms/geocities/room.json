@@ -55,6 +55,18 @@
 			"top": "45.33",
 			"width": "37.75",
 			"height": "41.16666666666667"
+		},
+		{
+			"id": "ufo",
+			"image": "spaceship.gif",
+			"imageAltText": "",
+			"pixelArt": false,
+			"destination": "",
+			"tooltip": "",
+			"left": "15",
+			"top": "39",
+			"width": "11.625",
+			"height": "6.833333333333333"
 		}
 	]
 }

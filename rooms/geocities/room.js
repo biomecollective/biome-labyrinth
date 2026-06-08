@@ -2,6 +2,7 @@ let starButton = document.getElementById("starButton");
 let starImage = document.querySelector("#starButton > img");
 let planetButton = document.getElementById("planetButton");
 let planetImage = document.querySelector("#planetButton > img");
+let ufo = document.getElementById("ufo");
 
 const stars = ["./rooms/geocities/star2.gif", "./rooms/geocities/star.gif"];
 let starIndex = 0;
@@ -26,5 +27,18 @@ if(planetButton) {
 		}
 
 		explosionSound.play();
+	});
+}
+
+if(ufo) {
+	ufo.style.transition = `2s`;
+
+	ufo.addEventListener("click", () => {
+		let ufoLeft = ufo.style.left;
+
+		if(ufoLeft == `15%`)
+			ufo.style.left = `75%`;
+		else
+			ufo.style.left = `15%`;
 	});
 }

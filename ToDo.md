@@ -40,10 +40,10 @@
 
 ### Labyrinth
 - [ ] Add room demonstrating tweening animation of buttons using custom css.
-- [ ] Display room author and author link in console on page load.
 - [ ] Tooltips persist on mobile after clicking buttons
 - [ ] Better css for things like tooltips, room editor inspector
 - [ ] Add favicon
+- [x] Display room author and author link in console on page load.
 - [x] Swap to implementing button images as child `<img>` instead of setting the
 	  backgroundImage property of the `<button>` itself. Would allow us to
 	  actually use the alt text

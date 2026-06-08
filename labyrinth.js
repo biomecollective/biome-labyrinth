@@ -42,7 +42,7 @@ function createButton(room, data) {
 		imageObj.addEventListener("mouseover", () => {
 			imageObj.src = `./rooms/${roomId}/${data.imageHover}`;
 		});
-			
+
 		hasHover = true;
 	});
 	//Set up button down image (making sure to return to correct original image
@@ -65,7 +65,7 @@ function createButton(room, data) {
 
 		hasDown = true;
 	});
-	
+
 	runIfPresent(data, "image", () => {
 		if(hasHover || hasDown) {
 			imageObj.addEventListener("mouseout", () => {
@@ -200,9 +200,24 @@ async function loadRoomData() {
 			});
 		});
 
+		//We can't use our runIfPresent function here, as we're using await.
 		if(Object.hasOwn(roomObj, "script")) {
 			await import(`./rooms/${roomId}/${roomObj.script}`);
 		}
+
+		//Display room credits in console for now.
+		runIfPresent(roomObj, "image", () => {
+			console.log(`Entering room: ${roomObj.name}`);
+		});
+		let credits = "";
+		runIfPresent(roomObj, "author", () => {
+			credits = `${roomObj.author}`;
+		});
+		runIfPresent(roomObj, "authorLink", () => {
+			credits += ` - ${roomObj.authorLink}`;
+		});
+		if(credits !== "")
+			console.log(`Created by ${credits}`);
 	}
 	catch(error) {
 		console.log(`Error fetching room data. ${error}`);

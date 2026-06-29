@@ -1,3 +1,6 @@
+# ⚠️ Note: We've moved the Biome Labyrinth to codeberg. This repository is no longer kept up to date. ⚠️
+You can find the new repository at: [https://codeberg.org/biomecollective/biome-labyrinth](https://codeberg.org/biomecollective/biome-labyrinth)
+
 # The Biome Labyrinth
 The [Biome Labyrinth](https://biomecollective.github.io/biome-labyrinth/) is a
 virtual space made up of a sprawling collection of interconnected rooms,
